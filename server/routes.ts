@@ -1,22 +1,23 @@
 import * as express from 'express';
 import * as jwt from 'jsonwebtoken';
+import * as authController from './controllers/auth/auth';
 
-import CatCtrl from './controllers/cat';
+import AppCtrl from './controllers/app';
 import UserCtrl from './controllers/user';
-import Cat from './models/cat';
-import User from './models/user';
 
 export default function setRoutes(app) {
 
   const router = express.Router();
 
-  const catCtrl = new CatCtrl();
+  const appCtrl = new AppCtrl();
   const userCtrl = new UserCtrl();
 
   //Only unprotected route
   router.route('/login').post(userCtrl.login);
 
 
+
+/*
   router.use('/', function(req, res, next) {
     jwt.verify(req.query.token, process.env.SECRET_TOKEN, function(err, decoded) {
       if (err) {
@@ -27,15 +28,16 @@ export default function setRoutes(app) {
       }
       next();
     })
-  });
+  });*/
 
   // Cats
-  router.route('/cats').get(catCtrl.getAll);
-  router.route('/cats/count').get(catCtrl.count);
-  router.route('/cat').post(catCtrl.insert);
-  router.route('/cat/:id').get(catCtrl.get);
-  router.route('/cat/:id').put(catCtrl.update);
-  router.route('/cat/:id').delete(catCtrl.delete);
+  router.route('/apps').get(authController.isAuthenticated, appCtrl.getAll);
+  //router.route('/cats').get(catCtrl.getAll);
+  router.route('/apps/count').get(appCtrl.count);
+  router.route('/app').post(appCtrl.insert);
+  router.route('/app/:id').get(appCtrl.get);
+  router.route('/app/:id').put(appCtrl.update);
+  router.route('/app/:id').delete(appCtrl.delete);
 
   // Users
   router.route('/users').get(userCtrl.getAll);
