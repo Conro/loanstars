@@ -32,7 +32,7 @@ export class AuthService {
         const decodedUser = this.decodeUserFromToken(res.token);
         this.setCurrentUser(decodedUser);
         console.log(decodedUser);
-        return this.loggedIn;
+        return this.loggedIn;       
       }
     );
   }

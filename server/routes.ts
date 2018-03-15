@@ -15,7 +15,9 @@ export default function setRoutes(app) {
   //Only unprotected route
   router.route('/login').post(userCtrl.login);
 
-
+  router.route('/test').get(function(req, res, next){
+    res.redirect('http://localhost:4200/login?test=123');
+  });
 
 /*
   router.use('/', function(req, res, next) {

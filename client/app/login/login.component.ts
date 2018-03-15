@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from '../services/auth.service';
@@ -25,15 +25,22 @@ export class LoginComponent implements OnInit {
   constructor(private auth: AuthService,
               private formBuilder: FormBuilder,
               private router: Router,
-              public toast: ToastComponent) { }
+              public toast: ToastComponent,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    /*
     if (this.auth.loggedIn) {
       this.router.navigate(['/']);
-    }
+    }*/
     this.loginForm = this.formBuilder.group({
       email: this.email,
       password: this.password
+    });
+
+    this.activatedRoute.queryParams.subscribe((params: Params) => {
+      let userId = params['test'];
+      console.log(userId);
     });
   }
 
