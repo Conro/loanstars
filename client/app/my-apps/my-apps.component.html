@@ -1,0 +1,48 @@
+<div class="card mb-3" *ngIf="!isLoading">
+    <h4 class="card-header">Current Applications ({{apps.length}})</h4>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Edit/Delete</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="apps.length === 0">
+          <tr>
+            <td colspan="4">There are no applications in the DB. Add a new application below.</td>
+          </tr>  
+        </tbody>
+        <tbody *ngIf="!isEditing">
+          <tr *ngFor="let app of apps">
+            <td>{{app.name}}</td>
+            <td>
+              <button class="btn btn-sm btn-primary" (click)="enableEditing(app)"><i class="fa fa-pencil"></i> Edit</button> 
+              <button class="btn btn-sm btn-danger" (click)="deleteApp(app)"><i class="fa fa-trash"></i> Delete</button>
+            </td>
+          </tr>  
+        </tbody>
+        <tbody *ngIf="isEditing">
+          <tr>
+            <td colspan="4">
+              <form class="form-inline" #form="ngForm" (ngSubmit)="editApp(app)">
+                <input class="form-control mr-2" type="text" name="name" [(ngModel)]="app.name" placeholder="Name" required>
+                <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
+                <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" *ngIf="!isEditing">
+    <h4 class="card-header">Add a new application</h4>
+    <div class="card-body">
+      <form class="form-inline" [formGroup]="addAppForm" (ngSubmit)="addApp()">
+        <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Name">
+        <button class="btn btn-primary" type="submit" [disabled]="!addAppForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
+      </form>
+    </div>
+  </div>
