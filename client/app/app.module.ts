@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
@@ -18,6 +19,12 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
+import { FormNavbarComponent } from './form-navbar/form-navbar.component';
+import { NewFormComponent } from './new-form/new-form.component';
+import { Step1Component } from './new-form/step1/step1.component';
+import { Step2Component } from './new-form/step2/step2.component';
+import { Step3Component } from './new-form/step3/step3.component';
+import { FormService } from './services/form.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +38,12 @@ import { Test2Component } from './test2/test2.component';
     AdminComponent,
     NotFoundComponent,
     TestComponent,
-    Test2Component
+    Test2Component,
+    FormNavbarComponent,
+    NewFormComponent,
+    Step1Component,
+    Step2Component,
+    Step3Component
   ],
   imports: [
     RoutingModule,
@@ -42,7 +54,8 @@ import { Test2Component } from './test2/test2.component';
     AuthGuardLogin,
     AuthGuardAdmin,
     ApplicationService,
-    UserService
+    UserService,
+    FormService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
