@@ -18,6 +18,7 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
+import { MyAppsComponent } from './my-apps/my-apps.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { Test2Component } from './test2/test2.component';
     AdminComponent,
     NotFoundComponent,
     TestComponent,
-    Test2Component
+    Test2Component,
+    MyAppsComponent
   ],
   imports: [
     RoutingModule,

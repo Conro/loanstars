@@ -1,5 +1,6 @@
 import { Test2Component } from './test2/test2.component';
 import { TestComponent } from './test/test.component';
+import { MyAppsComponent } from './my-apps/my-apps.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -19,8 +20,8 @@ const routes: Routes = [
   { path: '', component: AboutComponent },
   { path: 'apps', component: AppsComponent,
     children: [
-      {path: 'test', component: TestComponent},
-      {path: 'test2', component: Test2Component}
+      {path: '', redirectTo: 'my-apps', pathMatch: 'full'},
+      {path: 'my-apps', component: MyAppsComponent}
     ] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
