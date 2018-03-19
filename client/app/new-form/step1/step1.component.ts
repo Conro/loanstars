@@ -1,4 +1,8 @@
+import { FormDataService } from './../../services/form-data.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Step1 } from '../../shared/models/formData.model';
+
 
 @Component({
   selector: 'app-step1',
@@ -7,43 +11,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Step1Component implements OnInit {
 
-  /*
-  private formData: FormData = new FormData();
+  title = 'Please tell us about yourself.';
+  step1: Step1;
+  form: any;
 
-  testform = {
-    firstName: this.formData.firstName,
-    lastName: this.formData.lastName,
-    email: this.formData.email
-  }*/
-
-  constructor() {
+  constructor(private router: Router, private formDataService: FormDataService) {
   }
 
   ngOnInit() {
-    //this.personal = this.formDataService.getPersonal();
-    console.log('Personal feature loaded!');
+     this.step1 = this.formDataService.getStep1();
   }
 
-  title = 'Please tell us about yourself.';
-  //personal: Personal;
-  form: any;
-
-  /*
+  
   save(form: any): boolean {
       if (!form.valid) {
           return false;
       }
           
-      this.formDataService.setPersonal(this.personal);
+      this.formDataService.setStep1(this.step1);
       return true;
   }
 
   goToNext(form: any) {
+    console.log(form);
       if (this.save(form)) {
           // Navigate to the work page
-          this.router.navigate(['/work']);
+          this.router.navigate(['/new/step2']);
       }
   }
-  */
-
+  
 }

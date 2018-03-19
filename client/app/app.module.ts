@@ -25,7 +25,8 @@ import { NewFormComponent } from './new-form/new-form.component';
 import { Step1Component } from './new-form/step1/step1.component';
 import { Step2Component } from './new-form/step2/step2.component';
 import { Step3Component } from './new-form/step3/step3.component';
-import { FormService } from './services/form.service';
+import { FormDataService } from './services/form-data.service';
+import { FormFlowService } from './services/form-flow.service/form-flow.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { FormService } from './services/form.service';
     AuthGuardAdmin,
     ApplicationService,
     UserService,
-    FormService
+    FormDataService,
+    FormFlowService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

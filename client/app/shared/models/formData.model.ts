@@ -20,13 +20,13 @@ export class FormData {
     }
 }
 
-export class Personal {
+export class Step1 {
     firstName: string = '';
     lastName : string = '';
     email: string = '';
 }
 
-export class Address {
+export class Step2 {
     street: string = '';
     city: string = '';
     state: string = '';
