@@ -1,9 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-<<<<<<< HEAD
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-=======
 import { FormsModule } from '@angular/forms';
->>>>>>> 183a18bedc9d199290542c9e81fdcad4ab87dcbd
 
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
