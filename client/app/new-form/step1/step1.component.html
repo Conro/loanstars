@@ -13,10 +13,10 @@
                     </div>
                 </div>
                 <div class='col-1'>
-                        <label class="control-label" for="lastname">Last Name</label> 
-                    </div>
-                    <div class="col-3">
-                        <div class="form-group">
+                    <label class="control-label" for="lastname">Last Name</label>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
                         <input class="form-control input-md" #lastname="ngModel" required id="lastname" name="lastname" type="text" placeholder="Last Name" [(ngModel)]="step1.lastName">
                         <div class="alert alert-danger" [hidden]="lastname.valid">Last Name is required</div>
                     </div>
@@ -39,33 +39,32 @@
                 </div>
                 <div class="col-2">
                     <div class="form-group">
-                        <input class="form-control input-md" #areaCode1="ngModel" required id="areaCode1" name="areaCode1" type="text" placeholder="480" [(ngModel)]="step1.areaCode1">
-                        <div class="alert alert-danger" [hidden]="areaCode1.valid">Area Code required</div>
+                        <input class="form-control input-md" #primaryAreaCode="ngModel" required id="primaryAreaCode" name="primaryAreaCode" type="text" placeholder="480" [(ngModel)]="step1.primaryAreaCode">
+                        <div class="alert alert-danger" [hidden]="primaryAreaCode.valid">Area Code required</div>
                     </div>
                 </div>
                 -
                 <div class="col-2">
                     <div class="form-group">
-                        <input class="form-control input-md" #prefix1="ngModel" required id="prefix1" name="prefix1" type="text" placeholder="000" [(ngModel)]="step1.prefix1">
-                        <div class="alert alert-danger" [hidden]="prefix1.valid">Prefix required</div>
+                        <input class="form-control input-md" #primaryPrefix="ngModel" required id="primaryPrefix" name="primaryPrefix" type="text" placeholder="000" [(ngModel)]="step1.primaryPrefix">
+                        <div class="alert alert-danger" [hidden]="primaryPrefix.valid">Prefix required</div>
                     </div>
                 </div>
                 -
                 <div class="col-2">
                     <div class="form-group">
-                        <input class="form-control input-md" #lineNumber1="ngModel" required id="lineNumber1" name="lineNumber1" type="text" placeholder="0000" [(ngModel)]="step1.lineNumber1">
-                        <div class="alert alert-danger" [hidden]="lineNumber1.valid">Line Number required</div>
+                        <input class="form-control input-md" #primaryLineNumber="ngModel" required id="primaryLineNumber" name="primaryLineNumber" type="text" placeholder="0000" [(ngModel)]="step1.primaryLineNumber">
+                        <div class="alert alert-danger" [hidden]="primaryLineNumber.valid">Line Number required</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <select name="phoneType1">
+                        <select name="primaryPhoneType">
                             <option value="default">Select Phone Type</option>
                             <option value="mobile">Mobile</option>
                             <option value="home">Home</option>
                             <option value="work">Work</option>
                         </select>
-                        <div class="alert alert-danger" [hidden]="phoneType1.valid">Required</div>
                     </div>
                 </div>
             </div>
@@ -75,30 +74,29 @@
                 </div>
                 <div class="col-2">
                     <div class="form-group">
-                        <input class="form-control input-md" #areaCode2="ngModel" required id="areaCode2" name="areaCode2" type="text" placeholder="480" [(ngModel)]="step1.areaCode2">
+                        <input class="form-control input-md" #alternateAreaCode="ngModel" required id="alternateAreaCode" name="alternateAreaCode" type="text" placeholder="480" [(ngModel)]="step1.alternateAreaCode">
                     </div>
                 </div>
                 -
                 <div class="col-2">
                     <div class="form-group">
-                        <input class="form-control input-md" #prefix2="ngModel" required id="prefix2" name="prefix2" type="text" placeholder="000" [(ngModel)]="step1.prefix2">
+                        <input class="form-control input-md" #alternatePrefix="ngModel" required id="alternatePrefix" name="alternatePrefix" type="text" placeholder="000" [(ngModel)]="step1.alternatePrefix">
                     </div>
                 </div>
                 -
                 <div class="col-2">
                     <div class="form-group">
-                        <input class="form-control input-md" #lineNumber2="ngModel" required id="lineNumber2" name="lineNumber2" type="text" placeholder="0000" [(ngModel)]="step1.lineNumber2">
+                        <input class="form-control input-md" #alternateLineNumber="ngModel" required id="alternateLineNumber" name="alternateLineNumber" type="text" placeholder="0000" [(ngModel)]="step1.alternateLineNumber">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <select name="phoneType2">
+                        <select name="alternatePhoneType">
                             <option value="default">Select Phone Type</option>
                             <option value="mobile">Mobile</option>
                             <option value="home">Home</option>
                             <option value="work">Work</option>
                         </select>
-                        <div class="alert alert-danger" [hidden]="phoneType2.valid">Required</div>
                     </div>
                 </div>
             </div>
@@ -119,18 +117,14 @@
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <select name="residencyStatus">
-                            <option value="default">Select Residency Status</option>
-                            <option value="mobile">U.S. Citizen</option>
-                            <option value="home">Non-permenant Resident</option>
-                            <option value="work">Permenant Resident Alien</option>
+                        <select ng-model="residencyStatus" ng-options="x for x in residencyStatus" name="residencyStatus">
                         </select>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div>
-                    <label class="control-label" for="currentAddress">Current address line 1</label>
+                    <label class="control-label" for="currentAddress">Current address</label>
                 </div>
                 <div class="col-4">
                     <div class="form-group">
@@ -180,49 +174,13 @@
                     <div class="form-group">
                         <select name="residentialStatus">
                             <option value="default">Select Residential Status</option>
-                            <option value="mobile">Own</option>
-                            <option value="home">Rent</option>
-                            <option value="work">Living With Family</option>
-                            <option value="work">Living Rent-Free</option>
+                            <option value="Own">Own</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Living With Family">Living With Family</option>
+                            <option value="Living Rent-Free">Living Rent-Free</option>
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <label class="control-label" for="twoYears">Have you lived here for more than 2 years?</label> 
-                <div class="col-1">
-                    <input #twoYearsYes="ngModel" id="twoYearsYes" name="twoYearsYes" value="Yes" type="radio" [(ngModel)]="step1.twoYearsYes">Yes
-                </div>
-                <div class="col-1">
-                    <input #twoYearsNo="ngModel" id="twoYearsNo" name="twoYearsNo"  value="No" type="radio" [(ngModel)]="step1.twoYearsNo">No
-                </div>                
-            </div>
-            <div class="row">
-                <label class="control-label" for="twoYears">Have you lived here for more than 2 years?</label> 
-                <div class="col-1">
-                    <input #twoYearsYes="ngModel" id="twoYearsYes" name="twoYearsYes" value="Yes" type="radio" [(ngModel)]="step1.twoYearsYes">Yes
-                </div>
-                <div class="col-1">
-                    <input #twoYearsNo="ngModel" id="twoYearsNo" name="twoYearsNo"  value="No" type="radio" [(ngModel)]="step1.twoYearsNo">No
-                </div>                
-            </div>
-            <div class="row">
-                <label class="control-label" for="twoYears">Have you lived here for more than 2 years?</label> 
-                <div class="col-1">
-                    <input #twoYearsYes="ngModel" id="twoYearsYes" name="twoYearsYes" value="Yes" type="radio" [(ngModel)]="step1.twoYearsYes">Yes
-                </div>
-                <div class="col-1">
-                    <input #twoYearsNo="ngModel" id="twoYearsNo" name="twoYearsNo"  value="No" type="radio" [(ngModel)]="step1.twoYearsNo">No
-                </div>                
-            </div>
-            <div class="row">
-                <label class="control-label" for="twoYears">Have you lived here for more than 2 years?</label> 
-                <div class="col-1">
-                    <input #twoYearsYes="ngModel" id="twoYearsYes" name="twoYearsYes" value="Yes" type="radio" [(ngModel)]="step1.twoYearsYes">Yes
-                </div>
-                <div class="col-1">
-                    <input #twoYearsNo="ngModel" id="twoYearsNo" name="twoYearsNo"  value="No" type="radio" [(ngModel)]="step1.twoYearsNo">No
-                </div>                
             </div>
             <div class="form-group text-center">
                 <button type="button" class="btn btn-primary" [disabled]="!step1Form.valid" (click)="goToNext(step1Form)">Next</button>

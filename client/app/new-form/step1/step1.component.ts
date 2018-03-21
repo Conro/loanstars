@@ -17,7 +17,8 @@ export class Step1Component implements OnInit {
 
   constructor(private router: Router, private formDataService: FormDataService) {
   }
-
+    
+  residencyStatus = ["U.S. Citizen", "Not Citizen"];
   ngOnInit() {
      this.step1 = this.formDataService.getStep1();
   }
@@ -41,3 +42,4 @@ export class Step1Component implements OnInit {
   }
   
 }
+
