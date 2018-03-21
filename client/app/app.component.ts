@@ -1,7 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from './services/auth.service';
+<<<<<<< HEAD
 import { routerTransition } from './animations/router.animations'
+=======
 import { FormDataService } from './services/form-data.service';
+>>>>>>> 183a18bedc9d199290542c9e81fdcad4ab87dcbd
 
 @Component({
   selector: 'app-root',
