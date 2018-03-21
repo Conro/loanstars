@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { routerTransition } from './animations/router.animations'
 import { FormDataService } from './services/form-data.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  animations: [routerTransition]
 })
 export class AppComponent implements OnInit {
 
@@ -16,4 +18,7 @@ export class AppComponent implements OnInit {
     this.formData = this.formDataService.getFormData();
   }
 
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
+  }
 }

@@ -21,8 +21,8 @@ import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 import { Step1Component } from './new-form/step1/step1.component';
 
 const routes: Routes = [
-  { path: '', component: AboutComponent },
-  { path: 'apps', component: AppsComponent,
+  { path: '', component: AboutComponent, data: { state: 'about' } },
+  { path: 'apps', component: AppsComponent, data: { state: 'apps' },
     children: [
       {path: '', redirectTo: 'my-apps', pathMatch: 'full'},
       {path: 'my-apps', component: MyAppsComponent}

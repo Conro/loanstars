@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import { RoutingModule } from './routing.module';
@@ -50,7 +51,8 @@ import { FormFlowService } from './services/form-flow.service/form-flow.service'
   ],
   imports: [
     RoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     AuthService,
