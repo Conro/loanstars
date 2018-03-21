@@ -3,86 +3,230 @@
     <div class="card-body">
         <form #step1Form="ngForm" novalidate>          
             <div class="row">
-                <div class='col'>
-                    
+                <div class='col-1'>
+                    <label class="control-label" for="firstname">First Name</label>
+                </div>
+                <div class="col-3"> 
                     <div class="form-group">
-                            <label class="control-label" for="firstname">First Name</label>  
-                            <input class="form-control input-md" #firstname="ngModel" required id="firstname" name="firstname" type="text" placeholder="First Name" [(ngModel)]="step1.firstName">   
-                            <div class="alert alert-danger" [hidden]="firstname.valid">First Name is required</div>
-<!--
-                        <label class="control-label" for="firstname">First Name</label>  
-                        <input class="form-control input-md"  required id="firstname" name="firstname" type="text" placeholder="First Name">   
-                        <div class="alert alert-danger" >First Name is required</div>-->
+                        <input class="form-control input-md" #firstname="ngModel" required id="firstname" name="firstname" type="text" placeholder="First Name" [(ngModel)]="step1.firstName">   
+                        <div class="alert alert-danger" [hidden]="firstname.valid">First Name is required</div>
                     </div>
                 </div>
-                <div class='col'>
-                    <div class="form-group">
-                            <label class="control-label" for="lastname">Last Name</label>  
-                            <input class="form-control input-md" #lastname="ngModel" required id="lastname" name="lastname" type="text" placeholder="Last Name" [(ngModel)]="step1.lastName">
-                            <div class="alert alert-danger" [hidden]="lastname.valid">Last Name is required</div>
-<!--
-                        <label class="control-label" for="lastname">Last Name</label>  
-                        <input class="form-control input-md"  required id="lastname" name="lastname" type="text" placeholder="Last Name">
-                        <div class="alert alert-danger" >Last Name is required</div>-->
+                <div class='col-1'>
+                        <label class="control-label" for="lastname">Last Name</label> 
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                        <input class="form-control input-md" #lastname="ngModel" required id="lastname" name="lastname" type="text" placeholder="Last Name" [(ngModel)]="step1.lastName">
+                        <div class="alert alert-danger" [hidden]="lastname.valid">Last Name is required</div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div>
+                    <label class="control-label" for="dob">Date of Birth</label>
+                </div>
+                <div class="col-3">
                     <div class="form-group">
-                            <label class="control-label" for="email">Email</label>
-                            <input class="form-control input-md" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" name="email" type="text" placeholder="Email" [(ngModel)]="step1.email">
-                            <div class="alert alert-danger" [hidden]="email.valid">Email is required and must be valid</div>
-
-                        <!--
-                        <label class="control-label" for="email">Email</label>
-                        <input class="form-control input-md"  required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" name="email" type="text" placeholder="Email">
-                        <div class="alert alert-danger" >Email is required and must be valid</div>-->
+                        <input class="form-control input-md" #dob="ngModel" required id="dob" name="dob" type="text" placeholder="(mm/dd/yyyy)" [(ngModel)]="step1.dob">
+                        <div class="alert alert-danger" [hidden]="dob.valid">Date of Birth is required</div>
                     </div>
                 </div>
-            </div> 
+            </div>
+            <div class="row">
+                <div>
+                    <label class="control-label" for="primaryPhoneNumber">Primary Phone Number</label>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <input class="form-control input-md" #areaCode1="ngModel" required id="areaCode1" name="areaCode1" type="text" placeholder="480" [(ngModel)]="step1.areaCode1">
+                        <div class="alert alert-danger" [hidden]="areaCode1.valid">Area Code required</div>
+                    </div>
+                </div>
+                -
+                <div class="col-2">
+                    <div class="form-group">
+                        <input class="form-control input-md" #prefix1="ngModel" required id="prefix1" name="prefix1" type="text" placeholder="000" [(ngModel)]="step1.prefix1">
+                        <div class="alert alert-danger" [hidden]="prefix1.valid">Prefix required</div>
+                    </div>
+                </div>
+                -
+                <div class="col-2">
+                    <div class="form-group">
+                        <input class="form-control input-md" #lineNumber1="ngModel" required id="lineNumber1" name="lineNumber1" type="text" placeholder="0000" [(ngModel)]="step1.lineNumber1">
+                        <div class="alert alert-danger" [hidden]="lineNumber1.valid">Line Number required</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <select name="phoneType1">
+                            <option value="default">Select Phone Type</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="home">Home</option>
+                            <option value="work">Work</option>
+                        </select>
+                        <div class="alert alert-danger" [hidden]="phoneType1.valid">Required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label class="control-label" for="alternatePhoneNumber">Alternate Phone Number</label>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <input class="form-control input-md" #areaCode2="ngModel" required id="areaCode2" name="areaCode2" type="text" placeholder="480" [(ngModel)]="step1.areaCode2">
+                    </div>
+                </div>
+                -
+                <div class="col-2">
+                    <div class="form-group">
+                        <input class="form-control input-md" #prefix2="ngModel" required id="prefix2" name="prefix2" type="text" placeholder="000" [(ngModel)]="step1.prefix2">
+                    </div>
+                </div>
+                -
+                <div class="col-2">
+                    <div class="form-group">
+                        <input class="form-control input-md" #lineNumber2="ngModel" required id="lineNumber2" name="lineNumber2" type="text" placeholder="0000" [(ngModel)]="step1.lineNumber2">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <select name="phoneType2">
+                            <option value="default">Select Phone Type</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="home">Home</option>
+                            <option value="work">Work</option>
+                        </select>
+                        <div class="alert alert-danger" [hidden]="phoneType2.valid">Required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label class="control-label" for="email">Email</label>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <input class="form-control input-md" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" name="email" type="text" placeholder="Email" [(ngModel)]="step1.email">
+                        <div class="alert alert-danger" [hidden]="email.valid">Email is required and must be valid</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label class="control-label" for="residencyStatus">Residency Status</label>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <select name="residencyStatus">
+                            <option value="default">Select Residency Status</option>
+                            <option value="mobile">U.S. Citizen</option>
+                            <option value="home">Non-permenant Resident</option>
+                            <option value="work">Permenant Resident Alien</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label class="control-label" for="currentAddress">Current address line 1</label>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <input class="form-control input-md" #currentAddress="ngModel" id="currentAddress" name="currentAddress" type="text" [(ngModel)]="step1.currentAddress">
+                        <div class="alert alert-danger" [hidden]="currentAddress.valid">Current Address is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label class="control-label" for="city">City</label>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <input class="form-control input-md" #city="ngModel" id="city" name="currentAddress" type="text" [(ngModel)]="step1.city">
+                        <div class="alert alert-danger" [hidden]="city.valid">City is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label class="control-label" for="state">State</label>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <input class="form-control input-md" #state="ngModel" id="state" name="state" type="text" [(ngModel)]="step1.state">
+                        <div class="alert alert-danger" [hidden]="state.valid">State is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label class="control-label" for="zipCode">Zip Code</label>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <input class="form-control input-md" #zipCode="ngModel" id="zipCode" name="zipCode" type="text" [(ngModel)]="step1.zipCode">
+                        <div class="alert alert-danger" [hidden]="zipCode.valid">Zip Code is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label class="control-label" for="residencyStatus">Residential Status</label>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <select name="residentialStatus">
+                            <option value="default">Select Residential Status</option>
+                            <option value="mobile">Own</option>
+                            <option value="home">Rent</option>
+                            <option value="work">Living With Family</option>
+                            <option value="work">Living Rent-Free</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label" for="twoYears">Have you lived here for more than 2 years?</label> 
+                <div class="col-1">
+                    <input #twoYearsYes="ngModel" id="twoYearsYes" name="twoYearsYes" value="Yes" type="radio" [(ngModel)]="step1.twoYearsYes">Yes
+                </div>
+                <div class="col-1">
+                    <input #twoYearsNo="ngModel" id="twoYearsNo" name="twoYearsNo"  value="No" type="radio" [(ngModel)]="step1.twoYearsNo">No
+                </div>                
+            </div>
+            <div class="row">
+                <label class="control-label" for="twoYears">Have you lived here for more than 2 years?</label> 
+                <div class="col-1">
+                    <input #twoYearsYes="ngModel" id="twoYearsYes" name="twoYearsYes" value="Yes" type="radio" [(ngModel)]="step1.twoYearsYes">Yes
+                </div>
+                <div class="col-1">
+                    <input #twoYearsNo="ngModel" id="twoYearsNo" name="twoYearsNo"  value="No" type="radio" [(ngModel)]="step1.twoYearsNo">No
+                </div>                
+            </div>
+            <div class="row">
+                <label class="control-label" for="twoYears">Have you lived here for more than 2 years?</label> 
+                <div class="col-1">
+                    <input #twoYearsYes="ngModel" id="twoYearsYes" name="twoYearsYes" value="Yes" type="radio" [(ngModel)]="step1.twoYearsYes">Yes
+                </div>
+                <div class="col-1">
+                    <input #twoYearsNo="ngModel" id="twoYearsNo" name="twoYearsNo"  value="No" type="radio" [(ngModel)]="step1.twoYearsNo">No
+                </div>                
+            </div>
+            <div class="row">
+                <label class="control-label" for="twoYears">Have you lived here for more than 2 years?</label> 
+                <div class="col-1">
+                    <input #twoYearsYes="ngModel" id="twoYearsYes" name="twoYearsYes" value="Yes" type="radio" [(ngModel)]="step1.twoYearsYes">Yes
+                </div>
+                <div class="col-1">
+                    <input #twoYearsNo="ngModel" id="twoYearsNo" name="twoYearsNo"  value="No" type="radio" [(ngModel)]="step1.twoYearsNo">No
+                </div>                
+            </div>
             <div class="form-group text-center">
                 <button type="button" class="btn btn-primary" [disabled]="!step1Form.valid" (click)="goToNext(step1Form)">Next</button>
-            </div>         
+            </div>
         </form>
     </div>
 </div>
-
-
-<!--
-<form #personalForm="ngForm" class="" novalidate>
-    <div class="tab-pane fade in active">
-        <h4 class="head text-center">{{title}}</h4>
-        <br/>
-        <div class='row'>
-            <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
-                <div class="row">
-                    <div class='col-xs-12 col-sm-6'>
-                        <div class="form-group">
-                            <label class="control-label" for="firstname">First Name</label>  
-                            <input class="form-control input-md"  required id="firstname" name="firstname" type="text" placeholder="First Name">   
-                            <div class="alert alert-danger" >First Name is required</div>
-                        </div>
-                    </div>
-                    <div class='col-xs-12 col-sm-6'>
-                        <div class="form-group">
-                            <label class="control-label" for="lastname">Last Name</label>  
-                            <input class="form-control input-md"  required id="lastname" name="lastname" type="text" placeholder="Last Name">
-                            <div class="alert alert-danger" >Last Name is required</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="email">Email</label>
-                    <input class="form-control input-md"  required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" name="email" type="text" placeholder="Email">
-                    <div class="alert alert-danger" >Email is required and must be valid</div>
-                </div>
-                    
-                <div class="form-group text-center">
-                    <button class="btn btn-success btn-outline-rounded btn-info" (click)="goToNext(personalForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
--->
