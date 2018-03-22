@@ -28,6 +28,7 @@ import { Step2Component } from './new-form/step2/step2.component';
 import { Step3Component } from './new-form/step3/step3.component';
 import { FormDataService } from './services/form-data.service';
 import { FormFlowService } from './services/form-flow.service/form-flow.service';
+import { SuccessComponent } from './new-form/success/success.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { FormFlowService } from './services/form-flow.service/form-flow.service'
     NewFormComponent,
     Step1Component,
     Step2Component,
-    Step3Component
+    Step3Component,
+    SuccessComponent
   ],
   imports: [
     RoutingModule,

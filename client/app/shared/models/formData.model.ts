@@ -16,6 +16,11 @@ export class FormData {
     alternatePhoneType: '',
     residencyStatus: ''
     };
+    finances: Step3 = {
+    annualincome: '',
+    totalassets: ''
+
+    };
 
     clear() {
     this.personal.firstName = '';
@@ -33,6 +38,8 @@ export class FormData {
     this.personal.alternatePhone = '';
     this.personal.alternatePhoneType = '';
     this.personal.residencyStatus = '';
+    this.finances.annualincome = '';
+    this.finances.totalassets = '';
     }
 }
 
@@ -56,4 +63,9 @@ export class Step1 {
 
 export class Step2 {
     
+}
+
+export class Step3{
+    annualincome: string = '';
+    totalassets: string = '';
 }

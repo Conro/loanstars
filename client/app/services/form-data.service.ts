@@ -1,6 +1,6 @@
 import { Injectable }                        from '@angular/core';
 
-import { FormData, Step1, Step2 }       from '../shared/models/formData.model';
+import { FormData, Step1, Step2, Step3 }       from '../shared/models/formData.model';
 import { FormFlowService }                   from './form-flow.service/form-flow.service';
 import { STEPS }                             from './form-flow.service/form-steps.model';
 
@@ -9,8 +9,8 @@ export class FormDataService {
 
     private formData: FormData = new FormData();
     private isStep1FormValid: boolean = false;
-    private isWorkFormValid: boolean = false;
     private isStep2FormValid: boolean = false;
+    private isStep3FormValid: boolean = false;
 
     constructor(private formflowService: FormFlowService) { 
     }
@@ -74,6 +74,20 @@ export class FormDataService {
         
         // Validate Address Step in Workflow
         //this.formflowService.validateStep(STEPS.address);
+    }
+
+    getStep3() : Step3 {
+        // Return the Income data
+        var income: Step3 = {
+            annualincome: this.formData.finances.annualincome,
+            totalassets:this.formData.finances.totalassets
+        };
+        return income;
+    }
+    setStep3(data: Step3){
+        this.isStep3FormValid = true;
+        this.formData.finances.annualincome = data.annualincome,
+        this.formData.finances.totalassets = data.totalassets
     }
 
     getFormData(): FormData {
