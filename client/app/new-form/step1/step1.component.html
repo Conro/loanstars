@@ -20,83 +20,84 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>AZ</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-            </div>
-            
-            <!-- DOB and email -->
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="dob">Date of Birth</label>
-                    <input type="text" class="form-control" id="dob" placeholder="dd/mm/yyyy">
+                    <input type="text" class="form-control" #dob="ngModel" id="dob" name="dob" placeholder="dd/mm/yyyy" [(ngModel)]="step1.dob">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="email@provider.com">
+                    <input type="text" class="form-control" #email="ngModel" id="email" name="email" placeholder="email@provider.com" [(ngModel)]="step1.email">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputPrimaryPhone">Primary Phone Number</label>
-                    <input type="text" class="form-control" id="inputPrimaryPhone">
+                    <input type="text" class="form-control" #primaryPhone="ngModel" name="primaryPhone" id="inputPrimaryPhone" [(ngModel)]="step1.primaryPhone">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPrimaryPhoneType">Primary Phone Type</label>
-                    <select id="inputPrimaryPhoneType" class="form-control">
-                        <option selected value="default">Select Phone Type</option>
-                        <option value="cell">Cell</option>
-                        <option value="home">Home</option>
-                        <option value="work">Work</option>
+                    <select name="primaryPhoneType" #primaryPhoneType="ngModel" [(ngModel)]="step1.primaryPhoneType" id="inputPrimaryPhoneType" class="form-control">
+                        <option selected>Select Phone Type</option>
+                        <option>Cell</option>
+                        <option>Home</option>
+                        <option>Work</option>
                     </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputSecondaryPhone">Secondary Phone Number</label>
-                    <input type="text" class="form-control" id="inputSecondaryPhone">
+                    <label for="inputAlternatePhone">Alternate Phone Number</label>
+                    <input type="text" class="form-control" #alternatePhone="ngModel" name="alternatePhone" id="inputAlternatePhone" [(ngModel)]="step1.alternatePhone">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputSecondaryPhoneType">Secondary Phone Type</label>
-                    <select id="inputSecondaryPhoneType" class="form-control">
-                        <option selected value="default">Select Phone Type</option>
-                        <option value="cell">Cell</option>
-                        <option value="home">Home</option>
-                        <option value="work">Work</option>
+                    <label for="inputAlternatePhoneType">Alternate Phone Type</label>
+                    <select name="alternatePhoneType" #alternatePhoneType="ngModel" [(ngModel)]="step1.alternatePhoneType" id="inputAlternatePhoneType" class="form-control">
+                        <option selected>Select Phone Type</option>
+                        <option>Cell</option>
+                        <option>Home</option>
+                        <option>Work</option>
                     </select>
                 </div>
             </div>
+            <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control" #currentAddress1="ngModel" name="currentAddress1" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="step1.currentAddress1">
+            </div>
+            <div class="form-group">
+                    <label for="inputAddress2">Address 2</label>
+                    <input type="text" class="form-control" #currentAddress2="ngModel" name="currentAddress2" id="inputAddress2" placeholder="Apartment, studio, or floor" [(ngModel)]="step1.currentAddress2">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" #city="ngModel" name="city" id="inputCity" [(ngModel)]="step1.city">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select name="state" #state="ngModel" [(ngModel)]="step1.state" id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>AZ</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" #zipCode="ngModel" class="form-control" name="zipCode" id="inputZip" [(ngModel)]="step1.zipCode">
+                </div>
+            </div>
+            
+            <!-- DOB and email -->
+            
             
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="residencyStatus">Residency Status</label>
-                    <select id="residencyStatus" class="form-control">
-                        <option value="default">Select Residency Status</option>
-                        <option value="US Citizen">U.S. Citizen</option>
-                        <option value="Non-perm Res">Non-permenant Resident</option>
-                        <option value="Perm Res Alien">Permenant Resident Alien</option>
+                    <select name="residencyStatus" #residencyStatus="ngModel" [(ngModel)]="step1.residencyStatus" id="residencyStatus" class="form-control">
+                        <option>Select Residency Status</option>
+                        <option>U.S. Citizen</option>
+                        <option>Non-permenant Resident</option>
+                        <option>Permenant Resident Alien</option>
                     </select>
                 </div>
             </div>
