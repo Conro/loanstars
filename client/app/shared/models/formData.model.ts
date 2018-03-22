@@ -1,59 +1,55 @@
 export class FormData {
     firstName: string = '';
+    middleName:string = '';
     lastName : string = '';
     email: string = '';
-    work: string = '';
     dob: string = '';
-    currentAddress: string = '';
+    currentAddress1: string = '';
+    currentAddress2: string = '';
     city: string = '';
     state: string = '';
     zipCode: string = '';
     primaryPhone: string = '';
-    primaryAreaCode: string = '';
-    primaryPrefix: string = '';
-    primaryLineNumber: string = '';
+    primaryPhoneType: string = '';
     alternatePhone: string = '';
-    alternateAreaCode: string = '';
-    alternatePrefix: string = '';
-    alternateLineNumber: string = '';
+    alternatePhoneType: string = '';
+    residencyStatus: string = '';
 
     clear() {
     this.firstName = '';
+    this.middleName = '';
     this.lastName = '';
     this.email = '';
     this.dob = '';
-    this.currentAddress = '';
+    this.currentAddress1 = '';
+    this.currentAddress2 = '';
     this.city = '';
     this.state = '';
     this.zipCode = '';
     this.primaryPhone = '';
-    this.primaryAreaCode = '';
-    this.primaryPrefix = '';
-    this.primaryLineNumber = '';
+    this.primaryPhoneType = '';
     this.alternatePhone = '';
-    this.alternateAreaCode = '';
-    this.alternatePrefix = '';
-    this.alternateLineNumber = '';
+    this.alternatePhoneType = '';
+    this.residencyStatus = '';
     }
 }
 
 export class Step1 {
     firstName: string = '';
+    middleName: string = '';
     lastName : string = '';
     email: string = '';
     dob: string = '';
-    currentAddress: string = '';
+    currentAddress1: string = '';
+    currentAddress2: string = '';
     city: string = '';
     state: string = '';
     zipCode: string = '';
     primaryPhone: string = '';
-    primaryAreaCode: string = '';
-    primaryPrefix: string = '';
-    primaryLineNumber: string = '';
+    primaryPhoneType: string = '';
     alternatePhone: string = '';
-    alternateAreaCode: string = '';
-    alternatePrefix: string = '';
-    alternateLineNumber: string = '';
+    alternatePhoneType: string = '';
+    residencyStatus: string = '';
 }
 
 export class Step2 {
