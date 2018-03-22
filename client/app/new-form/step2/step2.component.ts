@@ -1,7 +1,7 @@
 import { FormDataService } from './../../services/form-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Step1 } from '../../shared/models/formData.model';
+import { Step2 } from '../../shared/models/formData.model';
 
 @Component({
   selector: 'app-step2',
