@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { GetStoredToken } from '../util'
 
 import { Application } from '../shared/models/application.model';
+import { app } from '../../../server/app';
 
 @Injectable()
 export class ApplicationService {

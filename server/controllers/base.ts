@@ -21,6 +21,11 @@ abstract class BaseCtrl {
   // Insert
   insert = (req, res) => {
     const obj = new this.model(req.body);
+    console.log("IN THE INSERT");
+    console.log(req.user._id);
+
+    obj.userId = req.user._id
+
     obj.save((err, item) => {
       // 11000 is the code for duplicate key error
       if (err && err.code === 11000) {

@@ -36,7 +36,7 @@ export default function setRoutes(app) {
   router.route('/apps').get(authController.isAuthenticated, appCtrl.getAll);
   //router.route('/cats').get(catCtrl.getAll);
   router.route('/apps/count').get(appCtrl.count);
-  router.route('/app').post(appCtrl.insert);
+  router.route('/app').post(authController.isAuthenticated, appCtrl.insert);
   router.route('/app/:id').get(appCtrl.get);
   router.route('/app/:id').put(appCtrl.update);
   router.route('/app/:id').delete(appCtrl.delete);

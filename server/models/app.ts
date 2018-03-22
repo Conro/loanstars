@@ -1,7 +1,10 @@
 import * as mongoose from 'mongoose';
 
 const appSchema = new mongoose.Schema({
-  name: String
+  userId: String,
+  status: String,
+  type: String,
+  amount: Number
 });
 
 const App = mongoose.model('App', appSchema);

@@ -4,7 +4,9 @@
       <table class="table table-bordered">
         <thead class="thead-light">
           <tr>
-            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Status</th>
+            <th scope="col">Amount</th>
             <th scope="col">Edit/Delete</th>
           </tr>
         </thead>
@@ -15,7 +17,9 @@
         </tbody>
         <tbody *ngIf="!isEditing">
           <tr *ngFor="let app of apps">
-            <td>{{app.name}}</td>
+            <td>{{app.type}}</td>
+            <td>{{app.status}}</td>
+            <td>{{app.amount}}</td>
             <td>
               <button class="btn btn-sm btn-primary" (click)="enableEditing(app)"><i class="fa fa-pencil"></i> Edit</button> 
               <button class="btn btn-sm btn-danger" (click)="deleteApp(app)"><i class="fa fa-trash"></i> Delete</button>
@@ -40,8 +44,34 @@
   <div class="card" *ngIf="!isEditing">
     <h4 class="card-header">Add a new application</h4>
     <div class="card-body">
-      <form class="form-inline" [formGroup]="addAppForm" (ngSubmit)="addApp()">
-        <input class="form-control mr-2" type="text" name="name" formControlName="name" placeholder="Name">
+      <form [formGroup]="addAppForm" (ngSubmit)="addApp()">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+              <label for="type">Type</label>
+                  <select id="type" class="form-control" formControlName="type" required>
+                      <option selected value="default">Select App Type</option>
+                      <option value="mortgage">Mortgage</option>
+                      <option value="auto">Auto</option>
+                  </select>
+          </div>
+          <div class="form-group col-md-4">
+              <label for="type">Status</label>
+              <select id="type" class="form-control" formControlName="status" required>
+                  <option selected value="default">Select App Type</option>
+                  <option value="approved">Approved</option>
+                  <option value="canceled">Canceled</option>
+                  <option value="declined">Declined</option>
+                  <option value="incomplete">Incomplete</option>
+                  <option value="pending">Pending</option>
+              </select>
+          </div>
+          <div class="form-group col-md-4">
+              <div class="form-group">
+                  <label for="type">Amount</label>
+                  <input class="form-control" type="text" name="amount" formControlName="amount" placeholder="Amount" required>
+              </div>
+          </div>
+        </div>
         <button class="btn btn-primary" type="submit" [disabled]="!addAppForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
       </form>
     </div>

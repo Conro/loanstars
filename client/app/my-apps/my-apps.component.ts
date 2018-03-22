@@ -18,7 +18,9 @@ export class MyAppsComponent implements OnInit {
   isEditing = false;
 
   addAppForm: FormGroup;
-  name = new FormControl('', Validators.required);
+  type = new FormControl('', Validators.required);
+  status = new FormControl('', Validators.required);
+  amount = new FormControl('', Validators.required);
 
   constructor(private appService: ApplicationService,
               private formBuilder: FormBuilder,
@@ -27,7 +29,9 @@ export class MyAppsComponent implements OnInit {
   ngOnInit() {
     this.getApps();
     this.addAppForm = this.formBuilder.group({
-      name: this.name,
+      type: this.type,
+      status: this.status,
+      amount: this.amount
     });
   }
 
