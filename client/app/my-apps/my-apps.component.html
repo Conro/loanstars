@@ -30,7 +30,25 @@
           <tr>
             <td colspan="4">
               <form class="form-inline" #form="ngForm" (ngSubmit)="editApp(app)">
-                <input class="form-control mr-2" type="text" name="name" [(ngModel)]="app.name" placeholder="Name" required>
+                  <select id="type" class="form-control" name="type" [(ngModel)]="app.type" required>
+                      <option selected value="default">Select App Type</option>
+                      <option value="mortgage">Mortgage</option>
+                      <option value="auto">Auto</option>
+                  </select>
+                  <select id="status" class="form-control" name="status" [(ngModel)]="app.status" required>
+                      <option selected value="default">Select App Status</option>
+                      <option value="approved">Approved</option>
+                      <option value="canceled">Canceled</option>
+                      <option value="declined">Declined</option>
+                      <option value="incomplete">Incomplete</option>
+                      <option value="pending">Pending</option>
+                  </select>
+                  <div class="form-group col-md-4">
+                      <div class="form-group">
+                          <input class="form-control" type="text" name="amount"  placeholder="Amount" [(ngModel)]="app.amount" required>
+                      </div>
+                  </div>
+                
                 <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
                 <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
               </form>
@@ -55,9 +73,9 @@
                   </select>
           </div>
           <div class="form-group col-md-4">
-              <label for="type">Status</label>
-              <select id="type" class="form-control" formControlName="status" required>
-                  <option selected value="default">Select App Type</option>
+              <label for="status">Status</label>
+              <select id="status" class="form-control" formControlName="status" required>
+                  <option selected value="default">Select App Status</option>
                   <option value="approved">Approved</option>
                   <option value="canceled">Canceled</option>
                   <option value="declined">Declined</option>
