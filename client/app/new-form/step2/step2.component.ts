@@ -10,7 +10,7 @@ import { Step2 } from '../../shared/models/formData.model';
 })
 export class Step2Component implements OnInit {
 
-	title = 'Propert & Loan Information'
+	title = 'Property & Loan Information'
 	step2: Step2;
 	form: any;
 
