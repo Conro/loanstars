@@ -1,36 +1,38 @@
 export class FormData {
-    firstName: string = '';
-    middleName:string = '';
-    lastName : string = '';
-    email: string = '';
-    dob: string = '';
-    currentAddress1: string = '';
-    currentAddress2: string = '';
-    city: string = '';
-    state: string = '';
-    zipCode: string = '';
-    primaryPhone: string = '';
-    primaryPhoneType: string = '';
-    alternatePhone: string = '';
-    alternatePhoneType: string = '';
-    residencyStatus: string = '';
+    personal: Step1 = {
+    firstName: '',
+    middleName: '',
+    lastName: '',
+    email: '',
+    dob: '',
+    currentAddress1: '',
+    currentAddress2: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    primaryPhone: '',
+    primaryPhoneType: '',
+    alternatePhone: '',
+    alternatePhoneType: '',
+    residencyStatus: ''
+    };
 
     clear() {
-    this.firstName = '';
-    this.middleName = '';
-    this.lastName = '';
-    this.email = '';
-    this.dob = '';
-    this.currentAddress1 = '';
-    this.currentAddress2 = '';
-    this.city = '';
-    this.state = '';
-    this.zipCode = '';
-    this.primaryPhone = '';
-    this.primaryPhoneType = '';
-    this.alternatePhone = '';
-    this.alternatePhoneType = '';
-    this.residencyStatus = '';
+    this.personal.firstName = '';
+    this.personal.middleName = '';
+    this.personal.lastName = '';
+    this.personal.email = '';
+    this.personal.dob = '';
+    this.personal.currentAddress1 = '';
+    this.personal.currentAddress2 = '';
+    this.personal.city = '';
+    this.personal.state = '';
+    this.personal.zipCode = '';
+    this.personal.primaryPhone = '';
+    this.personal.primaryPhoneType = '';
+    this.personal.alternatePhone = '';
+    this.personal.alternatePhoneType = '';
+    this.personal.residencyStatus = '';
     }
 }
 
