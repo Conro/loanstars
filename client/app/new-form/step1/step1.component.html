@@ -86,10 +86,7 @@
                     <input type="text" #zipCode="ngModel" class="form-control" name="zipCode" id="inputZip" [(ngModel)]="step1.zipCode">
                 </div>
             </div>
-            
             <!-- DOB and email -->
-            
-            
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="residencyStatus">Residency Status</label>
@@ -101,10 +98,6 @@
                     </select>
                 </div>
             </div>
-
-
-            
-
             <div class="form-group text-center">
                 <button type="button" class="btn btn-primary" [disabled]="!step1Form.valid" (click)="goToNext(step1Form)">Next</button>
             </div>
