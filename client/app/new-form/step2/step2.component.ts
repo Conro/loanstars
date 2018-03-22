@@ -1,7 +1,7 @@
 import { FormDataService } from './../../services/form-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Step1 } from '../../shared/models/formData.model';
+import { Step2 } from '../../shared/models/formData.model';
 
 @Component({
   selector: 'app-step2',
@@ -10,7 +10,7 @@ import { Step1 } from '../../shared/models/formData.model';
 })
 export class Step2Component implements OnInit {
 
-	title = 'Propert & Loan Information'
+	title = 'Property & Loan Information'
 	step2: Step2;
 	form: any;
 

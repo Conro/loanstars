@@ -1,108 +1,134 @@
-<div class="card1">
-	<h4 class="card1-header">{{ title }}</h4>
-	<div class="card1-body">
+<div class="card">
+	<h4 class="card-header">{{ title }}</h4>
+	<div class="card-body">
 		<form #step2Form="ngForm" novalidate>
-			<div class="line1">
-				<span>Property Type</span>
-				<select name="propertyType" #propertyType="ngModel" [(ngModel)]="step2.propertyType">
-					<option value="singleFamily">Single Family</option>
-					<option value="apartment">Apartment</option>
-					<option value="condo">Condo</option>
-					<option value="duplex">Duplex</option>
-				</select></div>
-			
-			<br>
-
-			<div class="line2">
-				<span>Is the property attached to another home?</span>
-				<input type="radio" name="propertyAttachedRadio" id="yes1" #yes="ngModel" [(ngModel)]="step2.yes"> Yes
-				<input type="radio" name="propertyAttachedRadio" id="no1" #no="ngModel" [(ngModel)]="step2.no"> No</div>
-
-			<br>
-
-			<div class="line3">
-				<span>Use of property</span>
-				<select name="useOfProperty" #useOfProperty="ngModel" [(ngModel)]="step2.useOfProperty">
-					<option value="primaryResidence">Primary Residence</option>
-					<option value="secondHome">Second Home</option>
-					<option value="investmentProperty">Investment Property</option>
-				</select>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="propertyType">Property Type</label>
+					<select class="form-control" name="propertyType" #propertyType="ngModel" [(ngModel)]="step2.propertyType">
+						<option>Single Family</option>
+						<option>Apartment</option>
+						<option>Condo</option>
+						<option>Duplex</option>
+					</select>
+				</div>
 			</div>
-			
-			<br>
-
-			<div class="line4">
-				<span>Purchase price ($USD)</span>
-				<input type="text" name="purchasePrice" #purchasePrice="ngModel" [(ngModel)]="step2.purchasePrice">
-				<a href="https://www.zillow.com/">Find Home Values</a>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="propertyAttached">Is the property attached to another home?</label>
+					<div class="form-row">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="propertyAttached" id="propertyAttached" value="yes" #propertyAttached="ngModel" [(ngModel)]="step2.propertyAttached">
+							<label class="form-check-label" for="propertyAttached">Yes</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="propertyAttached" id="propertyAttached" value="no" #propertyAttached="ngModel" [(ngModel)]="step2.propertyAttached">
+							<label class="form-check-label" for="propertyAttached">No</label>
+						</div>
+					</div>
+				</div>
 			</div>
-			
-			<br>
-
-			<div class="line5">
-				<span>Down payment amount ($USD)</span>
-				<input type="text" name="downPayment" #downPayment="ngModel" [(ngModel)]="step2.downPayment">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Use of property</label>
+					<select class="form-control" name="useOfProperty" #useOfProperty="ngModel" [(ngModel)]="step2.useOfProperty">
+						<option>Primary Residence</option>
+						<option>Second Home</option>
+						<option>Investment Property</option>
+					</select>
+				</div>
 			</div>
-			
-			<br>
-
-			<div class="line6">
-				<span>Annual real estate taxes ($USD)</span>
-				<input type="text" name="annualTaxes" #annualTaxes="ngModel" [(ngModel)]="step2.annualTaxes">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Purchase price ($USD)</label>
+					<input class="form-control" type="text" name="purchasePrice" #purchasePrice="ngModel" [(ngModel)]="step2.purchasePrice">
+					<a target="Blank" href="https://www.zillow.com/">Find Home Values</a>
+				</div>
 			</div>
-
-			<br>
-
-			<div class="line7">
-				<span>Annual hazard insurance premium ($USD)</span>
-				<input type="text" name="annualHazard" #annualHazard="ngModel" [(ngModel)]="step2.annualHazard">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Down payment amount ($USD)</label>
+					<input class="form-control" type="text" name="downPayment" #downPayment="ngModel" [(ngModel)]="step2.downPayment">
+				</div>
 			</div>
-
-			<br>
-
-			<div class="line8">
-				<span>Annual flood insurance premium ($USD)</span>
-				<input type="text" name="annualFlood" #annualFlood="ngModel" [(ngModel)]="step2.annualFlood">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Annual real estate taxes ($USD)</label>
+					<input class="form-control" type="text" name="annualTaxes" #annualTaxes="ngModel" [(ngModel)]="step2.annualTaxes">
+				</div>
 			</div>
-
-			<br>
-
-			<div class="line9">
-				<span>Do you have a real estate agent?</span>
-				<input type="radio" name="agentRadio" id="yes2" #agentRadio="ngModel" [(ngModel)]="step2.agentRadio"> Yes
-				<input type="radio" name="agentRadio" id="no2" #agentRadio="ngModel" [(ngModel)]="step2.agentRadio"> No
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Annual hazard insurance premium ($USD)</label>
+					<input class="form-control" type="text" name="annualHazard" #annualHazard="ngModel" [(ngModel)]="step2.annualHazard">
+				</div>
 			</div>
-
-			<br>
-
-			<div class="line10">
-				<span>When do you plan on buying a home?</span>
-				<select name="homePlan" #homePlan="ngModel" [(ngModel)]="step2.homePlan">
-					<option value="lessThan30Days">Less than 30 days</option>
-					<option value="lessThan90Days">Less than 90 days</option>
-					<option value="lessThan6Months">Less than 6 months</option>
-					<option value="lessThan1Year">Less than 1 year</option>
-					<option value="lessThan2Years">Less than 2 years</option>
-				</select>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Annual flood insurance premium ($USD)</label>
+					<input class="form-control" type="text" name="annualFlood" #annualFlood="ngModel" [(ngModel)]="step2.annualFlood">
+				</div>
 			</div>
-
-			<br>
-
-			<div class="line11">
-				<span>Do you have a purchase agreement/contract?</span>
-				<input type="radio" name="purchaseAgreementRadio" id="yes3" #purchaseAgreementRadio="ngModel" [(ngModel)]="step2.purchaseAgreementRadio"> Yes
-				<input type="radio" name="purchaseAgreementRadio" id="no3" #purchaseAgreementRadio="ngModel" [(ngModel)]="step2.purchaseAgreementRadio"> No
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Do you have a real estate agent?</label>
+					<div class="form-row">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="agent" id="agent" value="yes" #agent="ngModel" [(ngModel)]="step2.agent">
+							<label class="form-check-label" for="agent">Yes</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="agent" id="agent" value="no" #agent="ngModel" [(ngModel)]="step2.agent">
+							<label class="form-check-label" for="agent">No</label>
+						</div>
+					</div>
+				</div>
 			</div>
-
-			<br>
-
-			<div class="line12">
-				<span>Do you have a home equity loan or any other mortgage loan?</span>
-				<input type="radio" name="equityRadio" id="yes4" #equityRadio="ngModel" [(ngModel)]="step2.equityRadio"> Yes
-				<input type="radio" name="equityRadio" id="no4" #equityRadio="ngModel" [(ngModel)]="step2.equityRadio"> No
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>When do you plan on buying a home?</label>
+					<select class="form-control" name="homePlan" #homePlan="ngModel" [(ngModel)]="step2.homePlan">
+						<option>Less than 30 days</option>
+						<option>Less than 90 days</option>
+						<option>Less than 6 months</option>
+						<option>Less than 1 year</option>
+						<option>Less than 2 years</option>
+					</select>
+				</div>
 			</div>
-
-			<button>Back</button> <button>Cancel</button> <button (click)="goToNext(step1Form)">Next</button>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Do you have a purchase agreement/contract?</label>
+					<div class="form-row">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="purchaseAgreement" id="purchaseAgreement" value="yes" #purchaseAgreement="ngModel" [(ngModel)]="step2.purchaseAgreement">
+							<label class="form-check-label" for="purchaseAgreement">Yes</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="purchaseAgreement" id="purchaseAgreement" value="no" #purchaseAgreement="ngModel" [(ngModel)]="step2.purchaseAgreement">
+							<label class="form-check-label" for="purchaseAgreement">No</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Do you have a home equity loan or any other mortgage loan?</label>
+					<div class="form-row">
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="equity" id="equity" value="yes" #equity="ngModel" [(ngModel)]="step2.equity">
+							<label class="form-check-label" for="equity">Yes</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="equity" id="equity" value="no" #equity="ngModel" [(ngModel)]="step2.equity">
+							<label class="form-check-label" for="equity">No</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group text-center">
+				<button class="btn btn-primary" [disabled]="!step2Form.valid" (click)="goToNext(step2Form)">Next</button>
+			</div>
 		</form>
 	</div>
 </div>

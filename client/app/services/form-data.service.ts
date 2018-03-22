@@ -63,15 +63,38 @@ export class FormDataService {
 
     getStep2() : Step2 {
         // Return the Address data
-        var address: Step2 = {
-
+        var property: Step2 = {
+            propertyType: this.formData.property.propertyType,
+            propertyAttached: this.formData.property.propertyAttached,
+            useOfProperty: this.formData.property.useOfProperty,
+            purchasePrice: this.formData.property.purchasePrice,
+            downPayment: this.formData.property.downPayment,
+            annualTaxes: this.formData.property.annualTaxes,
+            annualHazard: this.formData.property.annualHazard,
+            annualFlood: this.formData.property.annualFlood,
+            agent: this.formData.property.agent,
+            homePlan: this.formData.property.homePlan,
+            purchaseAgreement: this.formData.property.purchaseAgreement,
+            equity: this.formData.property.equity
         };
-        return address;
+        return property;
     }
 
     setStep2(data: Step2) {
         // Update the Address data only when the Address Form had been validated successfully
-        
+        this.isStep2FormValid = true;
+        this.formData.property.propertyType = data.propertyType,
+        this.formData.property.propertyAttached = data.propertyAttached,
+        this.formData.property.useOfProperty = data.useOfProperty,
+        this.formData.property.purchasePrice = data.purchasePrice,
+        this.formData.property.downPayment = data.downPayment,
+        this.formData.property.annualTaxes = data.annualTaxes,
+        this.formData.property.annualHazard = data. annualHazard,
+        this.formData.property.annualFlood = data.annualFlood,
+        this.formData.property.agent = data.agent,
+        this.formData.property.homePlan = data.homePlan,
+        this.formData.property.purchaseAgreement = data.purchaseAgreement,
+        this.formData.property.equity = data.equity
         // Validate Address Step in Workflow
         //this.formflowService.validateStep(STEPS.address);
     }
