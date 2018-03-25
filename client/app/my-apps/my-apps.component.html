@@ -1,3 +1,7 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
 <div class="card mb-3" *ngIf="!isLoading">
     <h4 class="card-header">Current Applications ({{apps.length}})</h4>
     <div class="card-body">
@@ -17,9 +21,9 @@
         </tbody>
         <tbody *ngIf="!isEditing">
           <tr *ngFor="let app of apps">
-            <td>{{app.type}}</td>
-            <td>{{app.status}}</td>
-            <td>{{app.amount}}</td>
+            <td>{{app.type | titlecase}}</td>
+            <td>{{app.status | titlecase}}</td>
+            <td>{{app.amount | currency}}</td>
             <td>
               <button class="btn btn-sm btn-primary" (click)="enableEditing(app)"><i class="fa fa-pencil"></i> Edit</button> 
               <button class="btn btn-sm btn-danger" (click)="deleteApp(app)"><i class="fa fa-trash"></i> Delete</button>
@@ -39,6 +43,7 @@
                       <option selected value="default">Select App Status</option>
                       <option value="approved">Approved</option>
                       <option value="canceled">Canceled</option>
+                      <option value="submitted">Submitted</option>
                       <option value="declined">Declined</option>
                       <option value="incomplete">Incomplete</option>
                       <option value="pending">Pending</option>
@@ -78,6 +83,7 @@
                   <option selected value="default">Select App Status</option>
                   <option value="approved">Approved</option>
                   <option value="canceled">Canceled</option>
+                  <option value="submitted">Submitted</option>
                   <option value="declined">Declined</option>
                   <option value="incomplete">Incomplete</option>
                   <option value="pending">Pending</option>

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { routerTransition } from '../animations/router.animations'
 
 @Component({
   selector: 'app-new-form',
   templateUrl: './new-form.component.html',
-  styleUrls: ['./new-form.component.css']
+  styleUrls: ['./new-form.component.css'],
+  animations: [routerTransition]
 })
 export class NewFormComponent implements OnInit {
 
@@ -13,4 +15,7 @@ export class NewFormComponent implements OnInit {
     
   }
 
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
+  }
 }
