@@ -1,5 +1,7 @@
+import { FormData } from './../shared/models/formData.model';
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../animations/router.animations'
+import { FormDataService } from '../services/form-data.service';
 
 @Component({
   selector: 'app-new-form',
@@ -9,10 +11,12 @@ import { routerTransition } from '../animations/router.animations'
 })
 export class NewFormComponent implements OnInit {
 
-  constructor() { }
+  formData = null;
+
+  constructor(private formDataService: FormDataService) { }
 
   ngOnInit() {
-    
+    this.formData = this.formDataService.getFormData();
   }
 
   getState(outlet) {
