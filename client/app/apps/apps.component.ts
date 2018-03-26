@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
   selector: 'app-apps',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public toast: ToastComponent) { }
 
   ngOnInit() {
    
