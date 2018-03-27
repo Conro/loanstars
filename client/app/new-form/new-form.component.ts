@@ -20,6 +20,7 @@ export class NewFormComponent implements OnInit {
   }
 
   getState(outlet) {
+    //console.log("state set to: " + outlet.activatedRouteData.state);
     return outlet.activatedRouteData.state;
   }
 }

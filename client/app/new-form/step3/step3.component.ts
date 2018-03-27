@@ -30,7 +30,7 @@ export class Step3Component implements OnInit {
     console.log(form);
       if (this.save(form)) {
           // Navigate to the work page
-          this.router.navigate(['/new/success']);
+          this.router.navigate(['./new/success']);
       }
   }
 }

@@ -4,14 +4,18 @@
       <app-form-navbar></app-form-navbar>
       <pre>{{ formData | json }}</pre>
     </div>
-    <!--
-    <div class="col" #o="outlet">
-      <router-outlet></router-outlet>
-    </div>-->
+    
     <div class="col">
-      <div [@routerTransition]="getState(stepOutlet)">
-          <router-outlet #stepOutlet="outlet"></router-outlet>
-      </div>
+      <router-outlet></router-outlet>
     </div>
+    <!--
+    <div class="col">
+      <div [@routerTransition]="getState(o)">
+          <router-outlet #o="outlet"></router-outlet>
+      </div>
+    </div>--><!--
+    <div class="col" [@routerTransition]="getState(o)">
+        <router-outlet #o="outlet"></router-outlet>
+    </div>-->
   </div>
 </div>

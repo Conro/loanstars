@@ -37,7 +37,7 @@ export class Step1Component implements OnInit {
     console.log(form);
       if (this.save(form)) {
           // Navigate to the work page
-          this.router.navigate(['/new/step2']);
+          this.router.navigate(['./new/step2']);
       }
   }
   
