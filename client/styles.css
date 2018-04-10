@@ -6,3 +6,11 @@ body {
 .input-group {
   margin-bottom: 15px;
 }
+
+.ng-invalid:not(form):not(div)  {
+  border-left: 5px solid red; /* red */
+}
+
+.ng-valid:not(form):not(div)  {
+  border-left: 5px solid green; /* red */
+}

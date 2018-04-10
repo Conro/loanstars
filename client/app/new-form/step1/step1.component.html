@@ -1,106 +1,108 @@
+
 <div class="card">
-    <h4 class="card-header">{{ title }}</h4>
-    <div class="card-body">
-        <form #step1Form="ngForm" novalidate>          
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label class="control-label" for="firstname">First Name</label>
-                    <input class="form-control input-md" #firstname="ngModel" required id="firstname" name="firstname" type="text" placeholder="First Name" [(ngModel)]="step1.firstName">   
-                </div>
-                
-                <div class="form-group col-md-4">
-                    <label class="control-label" for="middlename">Middle Name</label>
-                    <input class="form-control input-md" #middlename="ngModel" required id="middlename" name="middlename" type="text" placeholder="Middle Name" [(ngModel)]="step1.middleName">
-                </div>
-                
-                <div class="col-sm-12 col-md-4">
-                    <div class="form-group">
-                        <label class="control-label" for="lastname">Last Name</label>
-                        <input class="form-control input-md" #lastname="ngModel" required id="lastname" name="lastname" type="text" placeholder="Last Name" [(ngModel)]="step1.lastName">
+        <h4 class="card-header">{{ title }}</h4>
+        <div class="card-body">
+            <form #step1Form="ngForm" novalidate>          
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="firstname">First Name</label>
+                        <input class="form-control input-md" #firstname="ngModel" required id="firstname" name="firstname" type="text" placeholder="First Name" [(ngModel)]="step1.firstName">   
+                    </div>
+                    
+                    <div class="form-group col-md-4">
+                        <label class="control-label" for="middlename">Middle Name</label>
+                        <input class="form-control input-md" #middlename="ngModel" required id="middlename" name="middlename" type="text" placeholder="Middle Name" [(ngModel)]="step1.middleName">
+                    </div>
+                    
+                    <div class="col-sm-12 col-md-4">
+                        <div class="form-group">
+                            <label class="control-label" for="lastname">Last Name</label>
+                            <input class="form-control input-md" #lastname="ngModel" required id="lastname" name="lastname" type="text" placeholder="Last Name" [(ngModel)]="step1.lastName">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="dob">Date of Birth</label>
-                    <input type="text" class="form-control" #dob="ngModel" id="dob" name="dob" placeholder="dd/mm/yyyy" [(ngModel)]="step1.dob">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="dob">Date of Birth</label>
+                        <input type="text" class="form-control" #dob="ngModel" id="dob" name="dob" placeholder="dd/mm/yyyy" [(ngModel)]="step1.dob">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" #email="ngModel" id="email" name="email" placeholder="email@provider.com" [(ngModel)]="step1.email">
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" #email="ngModel" id="email" name="email" placeholder="email@provider.com" [(ngModel)]="step1.email">
+    
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputPrimaryPhone">Primary Phone Number</label>
+                        <input type="text" class="form-control" #primaryPhone="ngModel" name="primaryPhone" id="inputPrimaryPhone" [(ngModel)]="step1.primaryPhone">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPrimaryPhoneType">Primary Phone Type</label>
+                        <select name="primaryPhoneType" #primaryPhoneType="ngModel" [(ngModel)]="step1.primaryPhoneType" id="inputPrimaryPhoneType" class="form-control">
+                            <option selected>Select Phone Type</option>
+                            <option>Cell</option>
+                            <option>Home</option>
+                            <option>Work</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputPrimaryPhone">Primary Phone Number</label>
-                    <input type="text" class="form-control" #primaryPhone="ngModel" name="primaryPhone" id="inputPrimaryPhone" [(ngModel)]="step1.primaryPhone">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputAlternatePhone">Alternate Phone Number</label>
+                        <input type="text" class="form-control" #alternatePhone="ngModel" name="alternatePhone" id="inputAlternatePhone" [(ngModel)]="step1.alternatePhone">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputAlternatePhoneType">Alternate Phone Type</label>
+                        <select name="alternatePhoneType" #alternatePhoneType="ngModel" [(ngModel)]="step1.alternatePhoneType" id="inputAlternatePhoneType" class="form-control">
+                            <option selected>Select Phone Type</option>
+                            <option>Cell</option>
+                            <option>Home</option>
+                            <option>Work</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPrimaryPhoneType">Primary Phone Type</label>
-                    <select name="primaryPhoneType" #primaryPhoneType="ngModel" [(ngModel)]="step1.primaryPhoneType" id="inputPrimaryPhoneType" class="form-control">
-                        <option selected>Select Phone Type</option>
-                        <option>Cell</option>
-                        <option>Home</option>
-                        <option>Work</option>
-                    </select>
+                <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" #currentAddress1="ngModel" name="currentAddress1" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="step1.currentAddress1">
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputAlternatePhone">Alternate Phone Number</label>
-                    <input type="text" class="form-control" #alternatePhone="ngModel" name="alternatePhone" id="inputAlternatePhone" [(ngModel)]="step1.alternatePhone">
+                <div class="form-group">
+                        <label for="inputAddress2">Address 2</label>
+                        <input type="text" class="form-control" #currentAddress2="ngModel" name="currentAddress2" id="inputAddress2" placeholder="Apartment, studio, or floor" [(ngModel)]="step1.currentAddress2">
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputAlternatePhoneType">Alternate Phone Type</label>
-                    <select name="alternatePhoneType" #alternatePhoneType="ngModel" [(ngModel)]="step1.alternatePhoneType" id="inputAlternatePhoneType" class="form-control">
-                        <option selected>Select Phone Type</option>
-                        <option>Cell</option>
-                        <option>Home</option>
-                        <option>Work</option>
-                    </select>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" #city="ngModel" name="city" id="inputCity" [(ngModel)]="step1.city">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">State</label>
+                        <select name="state" #state="ngModel" [(ngModel)]="step1.state" id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>AZ</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" #zipCode="ngModel" class="form-control" name="zipCode" id="inputZip" [(ngModel)]="step1.zipCode">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" #currentAddress1="ngModel" name="currentAddress1" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="step1.currentAddress1">
-            </div>
-            <div class="form-group">
-                    <label for="inputAddress2">Address 2</label>
-                    <input type="text" class="form-control" #currentAddress2="ngModel" name="currentAddress2" id="inputAddress2" placeholder="Apartment, studio, or floor" [(ngModel)]="step1.currentAddress2">
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" #city="ngModel" name="city" id="inputCity" [(ngModel)]="step1.city">
+                <!-- DOB and email -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="residencyStatus">Residency Status</label>
+                        <select name="residencyStatus" #residencyStatus="ngModel" [(ngModel)]="step1.residencyStatus" id="residencyStatus" class="form-control">
+                            <option>Select Residency Status</option>
+                            <option>U.S. Citizen</option>
+                            <option>Non-permenant Resident</option>
+                            <option>Permenant Resident Alien</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
-                    <select name="state" #state="ngModel" [(ngModel)]="step1.state" id="inputState" class="form-control">
-                    <option selected>Choose...</option>
-                    <option>AZ</option>
-                    </select>
+                <div class="form-group text-center">
+                    <button type="button" class="btn btn-primary" [disabled]="!step1Form.valid" (click)="goToNext(step1Form)">Next</button>
+                    <button type="button" class="btn btn-primary" (click)="quickSave(step1Form)">Save</button>
                 </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" #zipCode="ngModel" class="form-control" name="zipCode" id="inputZip" [(ngModel)]="step1.zipCode">
-                </div>
-            </div>
-            <!-- DOB and email -->
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="residencyStatus">Residency Status</label>
-                    <select name="residencyStatus" #residencyStatus="ngModel" [(ngModel)]="step1.residencyStatus" id="residencyStatus" class="form-control">
-                        <option>Select Residency Status</option>
-                        <option>U.S. Citizen</option>
-                        <option>Non-permenant Resident</option>
-                        <option>Permenant Resident Alien</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group text-center">
-                <button type="button" class="btn btn-primary" [disabled]="!step1Form.valid" (click)="goToNext(step1Form)">Next</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>

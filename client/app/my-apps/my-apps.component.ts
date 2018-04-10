@@ -1,9 +1,14 @@
-import { Application } from './../shared/models/application.model';
+import { FormDataService } from './../services/form-data.service';
+import { Application } from './../shared/models/appplication-models/application.model';
 import { ApplicationService } from './../services/application.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 import { ToastComponent } from '../shared/toast/toast.component';
+import { StateService } from '../services/state.service';
+import { Step1, Step3 } from '../shared/models/appplication-models/steps.model';
 
 @Component({
   selector: 'app-my-apps',
@@ -13,61 +18,91 @@ import { ToastComponent } from '../shared/toast/toast.component';
 export class MyAppsComponent implements OnInit {
 
   app = new Application();
-  apps: Application[] = [];
-  isLoading = true;
+  apps: Observable<Application[]>;
+  isLoading = false;
   isEditing = false;
 
   addAppForm: FormGroup;
   type = new FormControl('', Validators.required);
-  status = new FormControl('', Validators.required);
-  amount = new FormControl('', Validators.required);
+  currentStatus = new FormControl('', Validators.required);
+  purchasePrice = new FormControl('', Validators.required);
 
   constructor(private appService: ApplicationService,
               private formBuilder: FormBuilder,
-              public toast: ToastComponent) { }
+              public toast: ToastComponent,
+              private router: Router,
+              private state: StateService,
+              private formDataService: FormDataService) { }
 
   ngOnInit() {
-    this.getApps();
+    this.apps = this.appService.apps;
+    this.appService.loadAll();
+
+    //this.getApps();
     this.addAppForm = this.formBuilder.group({
       type: this.type,
-      status: this.status,
-      amount: this.amount
+      status: this.formBuilder.group({
+        currentStatus: this.currentStatus
+      }),
+      step1: new Step1(),
+      step2: this.formBuilder.group({
+        purchasePrice: this.purchasePrice,
+        agent: '',
+        annualFlood: '',
+        annualHazard: '',
+        annualTaxes: '',
+        downPayment: '',
+        equity: '',
+        homePlan: '',
+        propertyAttached: '',
+        propertyType: ''
+      }),
+      step3: new Step3()
     });
   }
 
+  /*
   getApps() {
     this.appService.getApps().subscribe(
       data => this.apps = data,
       error => console.log(error),
       () => this.isLoading = false
     );
+  }*/
+
+  
+  addAppFromTestHarness() {
+    this.appService.create(this.addAppForm.value)
+    console.log(this.addAppForm.value)
   }
 
-  addApp() {
-    this.appService.addApp(this.addAppForm.value).subscribe(
-      res => {
-        this.apps.push(res);
-        this.addAppForm.reset();
-        this.toast.setMessage('Application added successfully.', 'success');
-      },
-      error => console.log(error)
-    );
+  addApp(type?: string) {
+    let tmpApp = new Application();
+    tmpApp.type = type;
+    tmpApp.status.currentStatus = "incomplete";
+    const self = this;
+    this.appService.create(tmpApp, function(data){
+      self.state.addApp(data._id)
+    })
   }
 
   enableEditing(app: Application) {
-    this.isEditing = true;
+    this.appService.isEditing = true;
     this.app = app;
   }
 
   cancelEditing() {
-    this.isEditing = false;
+    this.appService.isEditing = false;
     this.app = new Application();
     this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the apps to reset the editing
-    this.getApps();
+    //this.getApps();
   }
 
   editApp(app: Application) {
+    this.appService.update(app);
+
+    /*
     this.appService.editApp(app).subscribe(
       () => {
         this.isEditing = false;
@@ -75,20 +110,17 @@ export class MyAppsComponent implements OnInit {
         this.toast.setMessage('Application edited successfully.', 'success');
       },
       error => console.log(error)
-    );
+    );*/
   }
 
   deleteApp(app: Application) {
     if (window.confirm('Are you sure you want to permanently delete this application?')) {
-      this.appService.deleteApp(app).subscribe(
-        () => {
-          const pos = this.apps.map(elem => elem._id).indexOf(app._id);
-          this.apps.splice(pos, 1);
-          this.toast.setMessage('Application deleted successfully.', 'success');
-        },
-        error => console.log(error)
-      );
+      this.appService.remove(app);
     }
   }
 
+  /*
+  gotoEdit(_id: string) {
+    this.router.navigate(['./new/step1', {id: _id}])
+  }*/
 }

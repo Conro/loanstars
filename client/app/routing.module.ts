@@ -51,3 +51,16 @@ const routes: Routes = [
 })
 
 export class RoutingModule {}
+
+
+/*
+{ path: 'new', component: NewFormComponent, canActivate: [AuthGuardLogin],
+    children: [
+      {path: '', redirectTo: 'step1', pathMatch: 'full'},
+      {path: 'step1', component: Step1Component, data: { state: 'step1' } },
+      {path: 'step1/:id', component: Step1Component, data: { state: 'step1' } },
+      {path: 'step2', component: Step2Component, data: { state: 'step2' }},
+      {path: 'step3', component: Step3Component, data: { state: 'step3' }},
+      {path: 'success', component: SuccessComponent, data: { state: 'success' }}
+    ] },
+*/

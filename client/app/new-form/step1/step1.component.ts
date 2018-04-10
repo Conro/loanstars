@@ -1,7 +1,8 @@
 import { FormDataService } from './../../services/form-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Step1 } from '../../shared/models/formData.model';
+import { Step1 } from '../../shared/models/appplication-models/steps.model';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -15,12 +16,18 @@ export class Step1Component implements OnInit {
   step1: Step1;
   form: any;
 
-  constructor(private router: Router, private formDataService: FormDataService) {
+  constructor(private router: Router, private formDataService: FormDataService, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
      this.step1 = this.formDataService.getStep1();
      console.log(this.step1)
+
+     this.activatedRoute.params.subscribe(params => {
+        if(params['id']) {
+          console.log(params['id']);
+        }
+      });
   }
 
   
@@ -31,6 +38,10 @@ export class Step1Component implements OnInit {
           
       this.formDataService.setStep1(this.step1);
       return true;
+  }
+
+  quickSave(form: any) {
+    this.formDataService.setStep1(this.step1);
   }
 
   goToNext(form: any) {

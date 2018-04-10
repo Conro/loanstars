@@ -1,3 +1,6 @@
+import { Step1, Step2, Step3 } from '../../shared/models/appplication-models/steps.model'
+import { Status } from '../../shared/models/appplication-models/status.model'
+
 export class FormData {
     personal: Step1 = {
         firstName: '',
@@ -32,8 +35,16 @@ export class FormData {
     };
 
     finances: Step3 = {
-        annualincome: '',
-        totalassets: ''
+        annualIncome: '',
+        totalAssets: ''
+    };
+
+    status: Status = {
+        currentStatus:  '',
+        isCompleted: false,
+        lastCompletedStep: '',
+        updatedDate: new Date(),
+        createdDate: new Date()
     };
 
     clear() {
@@ -52,8 +63,8 @@ export class FormData {
         this.personal.alternatePhone = '';
         this.personal.alternatePhoneType = '';
         this.personal.residencyStatus = '';
-        this.finances.annualincome = '';
-        this.finances.totalassets = '';
+        this.finances.annualIncome = '';
+        this.finances.totalAssets = '';
         this.property.propertyType = '';
         this.property.propertyAttached = '';
         this.property.useOfProperty = '';
@@ -67,42 +78,4 @@ export class FormData {
         this.property.purchaseAgreement = '';
         this.property.equity = '';
     }
-}
-
-export class Step1 {
-    firstName: string = '';
-    middleName: string = '';
-    lastName : string = '';
-    email: string = '';
-    dob: string = '';
-    currentAddress1: string = '';
-    currentAddress2: string = '';
-    city: string = '';
-    state: string = '';
-    zipCode: string = '';
-    primaryPhone: string = '';
-    primaryPhoneType: string = '';
-    alternatePhone: string = '';
-    alternatePhoneType: string = '';
-    residencyStatus: string = '';
-}
-
-export class Step2 {
-    propertyType: string = '';
-    propertyAttached: string = '';
-    useOfProperty: string = '';
-    purchasePrice: string = '';
-    downPayment: string = '';
-    annualTaxes: string = '';
-    annualHazard: string = '';
-    annualFlood: string = '';
-    agent: string = '';
-    homePlan: string = '';
-    purchaseAgreement: string = '';
-    equity: string = '';
-}
-
-export class Step3{
-    annualincome: string = '';
-    totalassets: string = '';
 }

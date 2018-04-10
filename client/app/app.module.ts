@@ -29,6 +29,8 @@ import { Step3Component } from './new-form/step3/step3.component';
 import { FormDataService } from './services/form-data.service';
 import { FormFlowService } from './services/form-flow.service/form-flow.service';
 import { SuccessComponent } from './new-form/success/success.component';
+import { StateService } from './services/state.service';
+import { StatusComponent } from './shared/components/status/status.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { SuccessComponent } from './new-form/success/success.component';
     Step1Component,
     Step2Component,
     Step3Component,
-    SuccessComponent
+    SuccessComponent,
+    StatusComponent
   ],
   imports: [
     RoutingModule,
@@ -63,7 +66,8 @@ import { SuccessComponent } from './new-form/success/success.component';
     ApplicationService,
     UserService,
     FormDataService,
-    FormFlowService
+    FormFlowService,
+    StateService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

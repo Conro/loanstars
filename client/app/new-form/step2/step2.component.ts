@@ -1,7 +1,7 @@
 import { FormDataService } from './../../services/form-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Step2 } from '../../shared/models/formData.model';
+import { Step2 } from '../../shared/models/appplication-models/steps.model';
 
 @Component({
   selector: 'app-step2',
@@ -28,6 +28,10 @@ export class Step2Component implements OnInit {
           
       this.formDataService.setStep2(this.step2);
       return true;
+  }
+
+  quickSave(form: any) {
+    this.formDataService.setStep2(this.step2);
   }
 
     goToNext(form: any) {
