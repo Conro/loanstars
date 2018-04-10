@@ -27,7 +27,7 @@ export class MyAppsComponent implements OnInit {
   currentStatus = new FormControl('', Validators.required);
   purchasePrice = new FormControl('', Validators.required);
 
-  constructor(private appService: ApplicationService,
+  constructor(public appService: ApplicationService,
               private formBuilder: FormBuilder,
               public toast: ToastComponent,
               private router: Router,
