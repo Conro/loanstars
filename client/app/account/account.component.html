@@ -6,6 +6,123 @@
   <h4 class="card-header">Account settings</h4>
   <div class="card-body">
     <form #accountForm="ngForm" (ngSubmit)="save(user)">
+      <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="firstname">First Name</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <input class="form-control input-md" required id="firstname" name="firstname" type="text" [(ngModel)]="user.firstname" placeholder="First Name">   
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="middlename">Middle Name</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <input class="form-control input-md" required id="middlename" name="middlename" [(ngModel)]="user.middlename" type="text" placeholder="Middle Name">
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="lastname">Last Name</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <input class="form-control input-md" required id="lastname" name="lastname" [(ngModel)]="user.lastname" type="text" placeholder="Last Name">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="dob">Date of Birth</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                </div>
+                <input type="text" class="form-control" id="dob" name="dob" [(ngModel)]="user.dob" placeholder="dd/mm/yyyy">
+              </div>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="email">Email</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="text" class="form-control" id="email" name="email" [(ngModel)]="user.email" placeholder="email@provider.com">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label for="primaryPhone">Primary Phone Number</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                </div>
+                <input type="text" class="form-control" name="primaryPhone" [(ngModel)]="user.primaryPhone" id="inputPrimaryPhone" placeholder="(480)-000-0000">
+              </div>
+            </div>
+              <div class="form-group col-md-4">
+                <label for="PrimaryPhoneType">Primary Phone Type</label>
+                <div class="input-group">
+                  <select name="primaryPhoneType" id="inputPrimaryPhoneType" [(ngModel)]="user.primaryPhoneType" class="form-control">
+                      <option selected>Select Phone Type</option>
+                      <option>Cell</option>
+                      <option>Home</option>
+                      <option>Work</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-compass"></i></span>
+                </div>
+                <input type="text" placeholder="Mesa" class="form-control" [(ngModel)]="user.city" name="city" id="inputCity">
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-map"></i></span>
+                </div>
+                <select name="state" id="inputState" [(ngModel)]="user.state" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>AZ</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-map-pin"></i></span>
+                </div>
+                <input type="text" placeholder="85000" class="form-control" [(ngModel)]="user.zipCode" name="zipCode" id="inputZip">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                  </div>
+                  <input class="form-control" type="text" [(ngModel)]="user.username" name="username" placeholder="Username">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text"><i class="fa fa-user"></i></span>
@@ -27,7 +144,7 @@
           <option value="user">User</option>
           <option value="admin">Admin</option>
         </select>
-      </div>
+      </div>-->
       <button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
         <i class="fa fa-save"></i> Save
       </button>

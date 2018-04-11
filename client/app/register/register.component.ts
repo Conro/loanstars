@@ -23,6 +23,51 @@ export class RegisterComponent implements OnInit {
     Validators.minLength(3),
     Validators.maxLength(100)
   ]);
+  zipcode = new FormControl('', [
+    Validators.required,
+    Validators.minLength(5),
+    Validators.maxLength(5)
+  ]);
+  city = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(100)
+  ]);
+  state = new FormControl('', [
+    Validators.required,
+    Validators.minLength(2),
+    Validators.maxLength(100)
+  ]);
+  firstname = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(100)
+  ]);
+  middlename = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(100)
+  ]);
+  lastname = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(100)
+  ]);
+  dob = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(100)
+  ]);
+  primaryPhone = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(100)
+  ]);
+  primaryPhoneType = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(100)
+  ]);
   password = new FormControl('', [
     Validators.required,
     Validators.minLength(6)
@@ -38,6 +83,15 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
+      firstname: this.firstname,
+      middlename: this.middlename,
+      lastname: this.lastname,
+      dob: this.dob,
+      primaryPhone: this.primaryPhone,
+      primaryPhoneType: this.primaryPhoneType,
+      city: this.city,
+      state: this.state,
+      zipCode: this.zipcode,
       username: this.username,
       email: this.email,
       password: this.password,
