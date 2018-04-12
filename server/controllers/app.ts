@@ -12,7 +12,7 @@ export default class AppCtrl {
   }
 
   getAll = (req, res) => {
-    this.model.find({}, (err, docs) => {
+    this.model.find({userId: req.user._id}, (err, docs) => {
       if (err) { return console.error(err); }
       res.status(200).json(docs);
     });

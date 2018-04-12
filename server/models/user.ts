@@ -2,9 +2,9 @@ import * as bcrypt from 'bcryptjs';
 import * as mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-  firstname: String,
-  middlename: String,
-  lastname: String,
+  firstName: String,
+  middleName: String,
+  lastName: String,
   dob: String,
   primaryPhone: String,
   primaryPhoneType: String,

@@ -23,11 +23,7 @@ import { Step1Component } from './new-form/step1/step1.component';
 
 const routes: Routes = [
   { path: '', component: AboutComponent, data: { state: 'about' } },
-  { path: 'apps', component: AppsComponent, data: { state: 'apps' },
-    children: [
-      {path: '', redirectTo: 'my-apps', pathMatch: 'full'},
-      {path: 'my-apps', component: MyAppsComponent}
-    ] },
+  { path: 'my-apps', component: MyAppsComponent, data: { state: 'my-apps' } },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
@@ -35,7 +31,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuardAdmin] },
   { path: 'new', component: NewFormComponent, canActivate: [AuthGuardLogin],
     children: [
-      {path: '', redirectTo: 'step1', pathMatch: 'full'},
+      //{path: '', redirectTo: 'step1', pathMatch: 'full'},
       {path: 'step1', component: Step1Component, data: { state: 'step1' } },
       {path: 'step2', component: Step2Component, data: { state: 'step2' }},
       {path: 'step3', component: Step3Component, data: { state: 'step3' }},

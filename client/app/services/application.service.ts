@@ -27,14 +27,14 @@ export class ApplicationService {
   }
 
   loadAll() {
-    if (this.dataStore.apps.length === 0){
+    //if (this.dataStore.apps.length === 0){
       this.isLoading = true;
           this.http.get('/api/apps' + GetStoredToken()).subscribe((data: Application[]) => {
             this.dataStore.apps = data;
             this._apps.next(Object.assign({}, this.dataStore).apps);
             this.isLoading = false;
           }, error => this.toast.setMessage('Error: Loading Applications.', 'warning'));
-    }
+    //}
   }
 
 

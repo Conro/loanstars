@@ -2,14 +2,14 @@
   <div class="row no-gutters">
     <div class="col-3">
       <app-form-navbar></app-form-navbar>
-      <button class="btn btn-danger" (click)="test()">Cancel Edit</button>
+      <!--<button class="btn btn-danger" (click)="test()">Cancel Edit</button>-->
       <pre>{{ appData | json }}</pre>
     </div>
     
     <div class="col">
       <router-outlet></router-outlet>
     </div>
-    <!--
+  <!---
     <div class="col">
       <div [@routerTransition]="getState(o)">
           <router-outlet #o="outlet"></router-outlet>
