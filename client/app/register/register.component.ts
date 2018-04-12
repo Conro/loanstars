@@ -10,7 +10,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
   templateUrl: './register.component.html'
 })
 export class RegisterComponent implements OnInit {
-
+  emailregEx = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$'
   registerForm: FormGroup;
   username = new FormControl('', [
     Validators.required,
@@ -21,7 +21,8 @@ export class RegisterComponent implements OnInit {
   email = new FormControl('', [
     Validators.required,
     Validators.minLength(3),
-    Validators.maxLength(100)
+    Validators.maxLength(100),
+    Validators.pattern(this.emailregEx)
   ]);
   zipcode = new FormControl('', [
     Validators.required,
@@ -99,25 +100,13 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  setClassUsername() {
-    return { 'has-danger': !this.username.pristine && !this.username.valid };
-  }
-
-  setClassEmail() {
-    return { 'has-danger': !this.email.pristine && !this.email.valid };
-  }
-
-  setClassPassword() {
-    return { 'has-danger': !this.password.pristine && !this.password.valid };
-  }
-
   register() {
     this.userService.register(this.registerForm.value).subscribe(
       res => {
-        this.toast.setMessage('you successfully registered!', 'success');
+        this.toast.setMessage('You successfully registered!', 'success');
         this.router.navigate(['/login']);
       },
-      error => this.toast.setMessage('email already exists', 'danger')
+      error => this.toast.setMessage('Email already exists', 'danger')
     );
   }
 }

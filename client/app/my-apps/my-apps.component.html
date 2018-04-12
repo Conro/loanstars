@@ -6,7 +6,7 @@
       <h4 class="card-header">Current Applications ({{apps.length}})</h4>
       <div class="card-body">
         <table class="table table-bordered table-striped">
-          <thead class="thead-light">
+          <thead *ngIf="!this.appService.isEditing" class="thead-light">
             <tr>
               <th scope="col">Type</th>
               <th scope="col">Status</th>
@@ -14,6 +14,14 @@
               <th scope="col">Started</th>
               <th scope="col">Last Updated</th>
               <th scope="col">Edit/Delete</th>
+            </tr>
+          </thead>
+          <thead *ngIf="this.appService.isEditing" class="thead-light">
+            <tr>
+              <th scope="col">Type</th>
+              <th scope="col">Status</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Save/Cancel</th>
             </tr>
           </thead>
           <tbody *ngIf="apps.length === 0">
@@ -36,14 +44,16 @@
             </tr>  
           </tbody>
           <tbody *ngIf="this.appService.isEditing">
-            <tr>
-              <td colspan="4">
-                <form class="form-inline" #form="ngForm" (ngSubmit)="editApp(app)">
+            <form class="form-inline" #form="ngForm" (ngSubmit)="editApp(app)">
+              <tr>
+                <td>
                     <select id="type" class="form-control" name="type" [(ngModel)]="app.type" required>
                         <option selected value="default">Select App Type</option>
                         <option value="mortgage">Mortgage</option>
                         <option value="auto">Auto</option>
                     </select>
+                </td>
+                <td>
                     <select id="status" class="form-control" name="status" [(ngModel)]="app.status.currentStatus" required>
                         <option selected value="default">Select App Status</option>
                         <option value="approved">Approved</option>
@@ -53,17 +63,20 @@
                         <option value="incomplete">Incomplete</option>
                         <option value="pending">Pending</option>
                     </select>
-                    <div class="form-group col-md-4">
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="amount"  placeholder="Amount" [(ngModel)]="app.step2.purchasePrice" required>
-                        </div>
+                </td>
+                <td> 
+                  <div class="form-group col-md-4">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="amount"  placeholder="Amount" [(ngModel)]="app.step2.purchasePrice" required>
                     </div>
-                  
+                  </div>
+                </td>
+                <td>
                   <button class="btn btn-sm btn-primary mr-2" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
-                  <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
-                </form>
-              </td>
-            </tr>
+                  <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>  
+                </td>
+              </tr>
+            </form>
           </tbody>
         </table>
         <button class="btn btn-primary" (click)="addApp('mortgage')">New Mortgage</button>

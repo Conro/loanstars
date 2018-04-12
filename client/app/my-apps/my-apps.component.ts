@@ -79,6 +79,7 @@ export class MyAppsComponent implements OnInit {
   addApp(type?: string) {
     let tmpApp = new Application();
     tmpApp.type = type;
+    tmpApp.step2.purchasePrice = "0";
     tmpApp.status.currentStatus = "incomplete";
     const self = this;
     this.appService.create(tmpApp, function(data){
