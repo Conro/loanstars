@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Step1 } from '../../shared/models/appplication-models/steps.model';
 import { ActivatedRoute } from '@angular/router';
-
+import { PatternValidator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-step1',
@@ -15,7 +15,7 @@ export class Step1Component implements OnInit {
   title = 'Please tell us about yourself.';
   step1: Step1;
   form: any;
-
+  
   constructor(private router: Router, private formDataService: FormDataService, private activatedRoute: ActivatedRoute) {
   }
 
@@ -23,6 +23,7 @@ export class Step1Component implements OnInit {
      this.step1 = this.formDataService.getStep1();
      console.log(this.step1)
 
+     
      this.activatedRoute.params.subscribe(params => {
         if(params['id']) {
           console.log(params['id']);
