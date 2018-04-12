@@ -38,17 +38,17 @@ export class RegisterComponent implements OnInit {
     Validators.minLength(2),
     Validators.maxLength(100)
   ]);
-  firstname = new FormControl('', [
+  firstName = new FormControl('', [
     Validators.required,
     Validators.minLength(3),
     Validators.maxLength(100)
   ]);
-  middlename = new FormControl('', [
+  middleName = new FormControl('', [
     Validators.required,
     Validators.minLength(3),
     Validators.maxLength(100)
   ]);
-  lastname = new FormControl('', [
+  lastName = new FormControl('', [
     Validators.required,
     Validators.minLength(3),
     Validators.maxLength(100)
@@ -83,9 +83,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      firstName: this.firstname,
-      middleName: this.middlename,
-      lastName: this.lastname,
+      firstName: this.firstName,
+      middleName: this.middleName,
+      lastName: this.lastName,
       dob: this.dob,
       primaryPhone: this.primaryPhone,
       primaryPhoneType: this.primaryPhoneType,
