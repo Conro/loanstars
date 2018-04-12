@@ -28,7 +28,7 @@
               <td>{{app.status.createdDate | date:'shortDate'}}</td>
               <td>{{app.status.updatedDate | date:'shortDate'}}</td>
               <td>
-                <button class="btn btn-sm btn-primary" (click)="state.editApp(app._id)"><i class="fa fa-trash"></i> Edit</button>
+                <button class="btn btn-sm btn-primary" (click)="state.editApp(app._id)"><i class="fa fa-pencil"></i> Edit</button>
                 <button class="btn btn-sm btn-danger" (click)="deleteApp(app)"><i class="fa fa-trash"></i> Delete</button>
                 <button class="btn btn-sm btn-info" (click)="enableEditing(app)"><i class="fa fa-pencil">Quick Edit</i></button> 
               </td>
