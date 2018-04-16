@@ -13,18 +13,22 @@ export class StateService {
   editApp(_id: string, callback?) {
 
     if(!callback){
+      console.log("IN NO callback for edit app state service")
       this.isEditing = true;
       this._formDataService.loadApp(_id);
       this._router.navigate(['./new/step1'])
     }
     else{
+      console.log("IN callback for edit app state service")
+      console.log(_id);
+      console.log("Type of _id= " + typeof(_id));
       this.isEditing = true;
       this._formDataService.loadApp(_id);
       this._router.navigate(['./new/step1'])
       callback();
     }
     
-    //let testId = "5acc2001d7640804f412cc40"
+    //let testId = "5acfbfbefd780421cfde71d5"
 
     //with matrix params
     //this._router.navigate(['./new/step1', {id: testId}])
