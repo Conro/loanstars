@@ -10,11 +10,19 @@ export class StateService {
   constructor(private _router: Router, private _formDataService: FormDataService) { }
 
 
-  editApp(_id: string) {
-    this.isEditing = true;
-    this._formDataService.loadApp(_id);
-    this._router.navigate(['./new/step1'])
-    
+  editApp(_id: string, callback?) {
+
+    if(!callback){
+      this.isEditing = true;
+      this._formDataService.loadApp(_id);
+      this._router.navigate(['./new/step1'])
+    }
+    else{
+      this.isEditing = true;
+      this._formDataService.loadApp(_id);
+      this._router.navigate(['./new/step1'])
+      callback();
+    }
     
     //let testId = "5acc2001d7640804f412cc40"
 

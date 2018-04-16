@@ -1,3 +1,4 @@
+import { StateService } from './../services/state.service';
 import { FormData } from './../shared/models/formData.model';
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../animations/router.animations'
@@ -14,7 +15,7 @@ export class NewFormComponent implements OnInit {
 
   appData = null;
 
-  constructor(private formDataService: FormDataService, private route: ActivatedRoute) { }
+  constructor(private formDataService: FormDataService, private route: ActivatedRoute, private stateService: StateService) { }
 
   ngOnInit() {
     let paramId = this.route.firstChild.snapshot.params['id'];
@@ -24,8 +25,11 @@ export class NewFormComponent implements OnInit {
     
     if(paramId){
       console.log("We got an ID passed to the edit form page: " + paramId)   
-      this.formDataService.loadApp(paramId)
-      this.appData = this.formDataService.getFormData();
+      //this.formDataService.loadApp(paramId)
+      this.stateService.editApp(paramId, function(){
+        this.appData = this.formDataService.getFormData();  
+      });
+      //this.appData = this.formDataService.getFormData();
     }
     else{
       console.log("No id passed")
