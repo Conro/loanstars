@@ -15,18 +15,20 @@ export class NewFormComponent implements OnInit {
 
   appData = null;
 
-  constructor(private formDataService: FormDataService, private route: ActivatedRoute, private stateService: StateService) { }
+  constructor(private formDataService: FormDataService, private route: ActivatedRoute, private stateService: StateService) {
+  }
 
   ngOnInit() {
     let paramId = this.route.firstChild.snapshot.params['id'];
     let queryId = this.route.firstChild.snapshot.queryParams['id'];
+    
     
     //for params
     
     if(paramId){
       console.log("We got an ID passed to the edit form page: " + paramId)   
       //this.formDataService.loadApp(paramId)
-      this.stateService.editApp(paramId, function(){
+      this.stateService.editApp(paramId, () =>{
         this.appData = this.formDataService.getFormData();  
       });
       //this.appData = this.formDataService.getFormData();
