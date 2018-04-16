@@ -28,9 +28,7 @@ export class NewFormComponent implements OnInit {
     if(paramId){
       console.log("We got an ID passed to the edit form page: " + paramId)   
       //this.formDataService.loadApp(paramId) 
-      this.stateService.editApp(paramId, () =>{
-        this.appData = this.formDataService.getFormData();  
-      });
+      this.stateService.editApp(paramId);
       //this.appData = this.formDataService.getFormData();
     }
     else{
