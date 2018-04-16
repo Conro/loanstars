@@ -19,6 +19,7 @@ export class NewFormComponent implements OnInit {
   }
 
   ngOnInit() {
+
     let paramId = this.route.firstChild.snapshot.params['id'];
     let queryId = this.route.firstChild.snapshot.queryParams['id'];
     
@@ -31,12 +32,16 @@ export class NewFormComponent implements OnInit {
       this.stateService.editApp(paramId);
       //this.appData = this.formDataService.getFormData();
     }
+    else if(queryId){
+      console.log("We got an ID QUERY passed to the edit form page: " + paramId) 
+      this.stateService.editApp(queryId);
+    }
     else{
       console.log("No id passed")
-      this.appData = this.formDataService.getFormData();
+      //this.appData = this.formDataService.getFormData();
     }
 
-    
+    /*
     //for query string
     if(queryId){
       console.log("we got query params: " + queryId);
@@ -45,7 +50,7 @@ export class NewFormComponent implements OnInit {
     else{
       console.log("no query params were sent: ");
       this.appData = this.formDataService.getFormData();
-    }
+    }*/
     
 
     

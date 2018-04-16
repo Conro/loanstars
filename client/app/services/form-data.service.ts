@@ -30,7 +30,7 @@ export class FormDataService {
     }
 
     loadApp(id: string): any {
-
+        console.log("in loadApp: " + id)
         this.singleApp = this.appService.apps.pipe(
             map(apps => apps.find(item => item._id === id))
             );

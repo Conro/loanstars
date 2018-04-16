@@ -17,7 +17,7 @@ export class StateService {
       this.isEditing = true;
       this._formDataService.loadApp(_id);
       this._router.navigate(['./new/step1'])
-    }
+    }/*
     else{
       console.log("IN callback for edit app state service")
       console.log(_id);
@@ -35,6 +35,7 @@ export class StateService {
 
     //with query params
     //this._router.navigate(['./new/step1'], {queryParams: {id: testId}})
+    */
   }
 
   addApp(_id: string) {
