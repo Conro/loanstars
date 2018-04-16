@@ -38,7 +38,7 @@ export class NewFormComponent implements OnInit {
     }
     else{
       console.log("No id passed")
-      //this.appData = this.formDataService.getFormData();
+      this.appData = this.formDataService.getFormData();
     }
 
     /*
