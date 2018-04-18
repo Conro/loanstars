@@ -5,6 +5,40 @@
   <div class="card mb-3" *ngIf="!this.appService.isLoading">
       <h4 class="card-header">Current Applications ({{apps.length}})</h4>
       <div class="card-body">
+        
+          <div class="container-buttons">
+              <div class="row">
+                <div class="col-sm">
+                    <div class="card" style="width: 15rem;">
+                        <i class="c-icons fa fa-car" style="font-size: 8em;"></i>
+                        <div class="card-body">
+                          <span class="card-text">Auto loan </span>
+                        </div>
+                      </div>
+                  
+                </div>
+                <div class="col-sm">
+                    <div class="card" style="width: 15rem;">
+                        <i class="c-icons fa fa-home" style="font-size: 8em;"></i>
+                        <div class="card-body">
+                          <span class="card-text">Mortgage Loan</span>
+                        </div>
+                      </div>
+                  
+                </div>
+                <div class="col-sm">
+                    <div class="card" style="width: 15rem;">
+                        <i class="c-icons fa fa-credit-card-alt" style="font-size: 8em;"></i>
+                        <div class="card-body">
+                          <span class="card-text">Loanstars Credit Card</span>
+                        </div>
+                      </div>
+                  
+                </div>
+              </div>
+            </div>
+
+
         <table class="table table-bordered table-striped">
           <thead class="thead-light">
             <tr>
@@ -70,6 +104,7 @@
       </div>
     </div>  
 </ng-container>
+
 
 
   <div class="card" *ngIf="!this.appService.isEditing">
