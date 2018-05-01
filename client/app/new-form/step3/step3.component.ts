@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Step3 } from '../../shared/models/appplication-models/steps.model';
 import { Status } from '../../shared/models/appplication-models/status.model';
+import { PatternValidator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-step3',

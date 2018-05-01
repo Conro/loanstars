@@ -30,7 +30,7 @@
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label>Use of property</label>
+					<label>Use of Property</label>
 					<select class="form-control" name="useOfProperty" #useOfProperty="ngModel" [(ngModel)]="step2.useOfProperty">
 						<option>Primary Residence</option>
 						<option>Second Home</option>
@@ -40,33 +40,33 @@
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label>Purchase price ($USD)</label>
-					<input class="form-control" type="text" name="purchasePrice" #purchasePrice="ngModel" [(ngModel)]="step2.purchasePrice">
+					<label>Purchase Price ($USD)</label>
+					<input class="form-control" type="text" name="purchasePrice" #purchasePrice="ngModel" [(ngModel)]="step2.purchasePrice" placeholder="0.00" pattern="^((\d+)|(\d{1,3})(\,\d{3}|)*)(\.\d{2}|)$">
 					<a target="Blank" href="https://www.zillow.com/">Find Home Values</a>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label>Down payment amount ($USD)</label>
-					<input class="form-control" type="text" name="downPayment" #downPayment="ngModel" [(ngModel)]="step2.downPayment">
+					<label>Down Payment Amount ($USD)</label>
+					<input class="form-control" type="text" name="downPayment" #downPayment="ngModel" [(ngModel)]="step2.downPayment" placeholder="0.00" pattern="^((\d+)|(\d{1,3})(\,\d{3}|)*)(\.\d{2}|)$">
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label>Annual real estate taxes ($USD)</label>
-					<input class="form-control" type="text" name="annualTaxes" #annualTaxes="ngModel" [(ngModel)]="step2.annualTaxes">
+					<label>Annual Real Estate Taxes ($USD)</label>
+					<input class="form-control" type="text" name="annualTaxes" #annualTaxes="ngModel" [(ngModel)]="step2.annualTaxes" placeholder="0.00" pattern="^((\d+)|(\d{1,3})(\,\d{3}|)*)(\.\d{2}|)$">
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label>Annual hazard insurance premium ($USD)</label>
-					<input class="form-control" type="text" name="annualHazard" #annualHazard="ngModel" [(ngModel)]="step2.annualHazard">
+					<label>Annual Hazard Insurance Premium ($USD)</label>
+					<input class="form-control" type="text" name="annualHazard" #annualHazard="ngModel" [(ngModel)]="step2.annualHazard" placeholder="0.00" pattern="^((\d+)|(\d{1,3})(\,\d{3}|)*)(\.\d{2}|)$">
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label>Annual flood insurance premium ($USD)</label>
-					<input class="form-control" type="text" name="annualFlood" #annualFlood="ngModel" [(ngModel)]="step2.annualFlood">
+					<label>Annual Flood Insurance Premium ($USD)</label>
+					<input class="form-control" type="text" name="annualFlood" #annualFlood="ngModel" [(ngModel)]="step2.annualFlood" placeholder="0.00" pattern="^((\d+)|(\d{1,3})(\,\d{3}|)*)(\.\d{2}|)$">
 				</div>
 			</div>
 			<div class="form-row">

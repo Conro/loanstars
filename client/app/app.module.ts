@@ -31,7 +31,7 @@ import { FormFlowService } from './services/form-flow.service/form-flow.service'
 import { SuccessComponent } from './new-form/success/success.component';
 import { StateService } from './services/state.service';
 import { StatusComponent } from './shared/components/status/status.component';
-import { NotificationService } from './services/notification.service';
+import { PatternValidator } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -68,8 +68,7 @@ import { NotificationService } from './services/notification.service';
     UserService,
     FormDataService,
     FormFlowService,
-    StateService,
-    NotificationService
+    StateService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
