@@ -2,6 +2,7 @@ import { FormDataService } from './../../services/form-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Step3 } from '../../shared/models/appplication-models/steps.model';
+import { Status } from '../../shared/models/appplication-models/status.model';
 
 @Component({
   selector: 'app-step3',
@@ -14,6 +15,7 @@ export class Step3Component implements OnInit {
 
   title = 'Your Finances.';
   step3: Step3;
+  status: Status
   form: any;
   ngOnInit() {
     this.step3 = this.formDataService.getStep3();
@@ -35,9 +37,10 @@ export class Step3Component implements OnInit {
 
   goToNext(form: any) {
     console.log(form);
-      if (this.save(form)) {
-          // Navigate to the work page
-          this.router.navigate(['./new/success']);
-      }
+    if (this.save(form)) {
+        // Navigate to the work page
+        this.formDataService.setStatus("completed")
+        this.router.navigate(['./new/success']);
+    }  
   }
 }

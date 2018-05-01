@@ -9,6 +9,7 @@ import { STEPS }                             from './form-flow.service/form-step
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import App from '../../../server/models/app';
+import { Status } from '../shared/models/appplication-models/status.model';
 
 @Injectable()
 export class FormDataService {
@@ -171,6 +172,11 @@ export class FormDataService {
         this.saveCurrent();
     }
 
+    setStatus(data: string){
+        this.appData.status.currentStatus = data;
+
+        this.saveCurrent();
+    }
     getFormData(): Application {
         // Return the entire Form Data
         console.log("app data from getformdata");
