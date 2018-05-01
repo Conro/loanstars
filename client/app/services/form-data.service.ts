@@ -193,4 +193,55 @@ export class FormDataService {
         return this.isStep1FormValid &&
                 this.isStep2FormValid;
     }
+
+    autofillSetStep1(data: Step1) {
+        // Update the Personal data only when the Personal Form had been validated successfully
+        this.isStep1FormValid = true;
+        
+            this.appData.step1.firstName = "Marcus";
+            this.appData.step1.middleName = "Layton";
+            this.appData.step1.lastName = "Cunico";
+            this.appData.step1.email = "mcunico@asu.edu";
+            this.appData.step1.dob = "12/25/1994";
+            this.appData.step1.currentAddress1 = "100 E Loanstar St.";
+            this.appData.step1.currentAddress2 = data.currentAddress2;
+            this.appData.step1.city = "Mesa";
+            this.appData.step1.state =  "AZ";
+            this.appData.step1.zipCode = "85000";
+            this.appData.step1.primaryPhone = "4800000000";
+            this.appData.step1.primaryPhoneType = "Cell";
+            this.appData.step1.alternatePhone = data.alternatePhone;
+            this.appData.step1.alternatePhoneType = data.alternatePhoneType;
+            this.appData.step1.residencyStatus = "U.S. Citizen";
+            
+            this.saveCurrent();
+    }
+
+    autofillSetStep2(data: Step2) {
+        // Update the Address data only when the Address Form had been validated successfully
+        this.isStep2FormValid = true;
+        this.appData.step2.propertyType = "Apartment",
+        this.appData.step2.propertyAttached = "no",
+        this.appData.step2.useOfProperty = "Primary Residence",
+        this.appData.step2.purchasePrice = "1000000",
+        this.appData.step2.downPayment = "1000000",
+        this.appData.step2.annualTaxes = "1000000",
+        this.appData.step2.annualHazard = "1000000",
+        this.appData.step2.annualFlood = "1000000",
+        this.appData.step2.agent = "no",
+        this.appData.step2.homePlan = "Less than 1 year",
+        this.appData.step2.purchaseAgreement = "no",
+        this.appData.step2.equity = "yes"
+
+        this.saveCurrent();
+        // Validate Address Step in Workflow
+        //this.formflowService.validateStep(STEPS.address);
+    }
+    autofillSetStep3(data: Step3){
+        this.isStep3FormValid = true;
+        this.appData.step3.annualIncome = "1000000",
+        this.appData.step3.totalAssets = "1000000"
+
+        this.saveCurrent();
+    }
 }

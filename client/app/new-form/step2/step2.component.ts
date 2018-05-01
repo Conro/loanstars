@@ -20,26 +20,26 @@ export class Step2Component implements OnInit {
   	 this.step2 = this.formDataService.getStep2();
      console.log(this.step2)
   }
-
-    save(form: any): boolean {
-      if (!form.valid) {
-          return false;
-      }
-          
-      this.formDataService.setStep2(this.step2);
-      return true;
+  
+  save(form: any): boolean {
+    if (!form.valid) {
+        return false;
+    }
+        
+    this.formDataService.setStep2(this.step2);
+    return true;
   }
 
   quickSave(form: any) {
     this.formDataService.setStep2(this.step2);
   }
 
-    goToNext(form: any) {
-    console.log(form);
-      if (this.save(form)) {
-          // Navigate to the work page
-          this.router.navigate(['./new/step3']);
-      }
+  goToNext(form: any) {
+  console.log(form);
+    if (this.save(form)) {
+        // Navigate to the work page
+        this.router.navigate(['./new/step3']);
+    }
   }
 
 }
