@@ -2,7 +2,7 @@ import { FormDataService } from './../../services/form-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Step2 } from '../../shared/models/appplication-models/steps.model';
-import { PatternValidator, Validators } from '@angular/forms';
+// import { PatternValidator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-step2',
