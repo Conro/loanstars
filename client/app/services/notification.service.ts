@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class NotificationService implements OnInit {
 
   //private SERVER_URL = 'http://localhost:3000';
-  private SERVER_URL = 'https://loanstars.herokuapp.com:3000';
+  private SERVER_URL = 'https://loanstars.herokuapp.com';
 
   private socket;
   public list: Observable<String[]>;
