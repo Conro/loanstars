@@ -72,7 +72,7 @@
           <tbody *ngIf="this.appService.isEditing">
             <tr>
               <td colspan="4">
-                <form class="form-inline" #form="ngForm" (ngSubmit)="editApp(app)">
+                <form class="form-inline" #form="ngForm" (ngSubmit)="quickEditApp(app)">
                     <select id="type" class="form-control" name="type" [(ngModel)]="app.type" required>
                         <option selected value="default">Select App Type</option>
                         <option value="mortgage">Mortgage</option>
