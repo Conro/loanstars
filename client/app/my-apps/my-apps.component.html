@@ -7,36 +7,36 @@
       <div class="card-body">
         
           <div class="container-buttons">
-              <div class="row">
+            <div class="row p-3">
                 <div class="col-sm">
-                    <div class="card" style="width: 15rem;">
-                        <i class="c-icons fa fa-car" style="font-size: 8em;"></i>
-                        <div class="card-body">
-                          <span class="card-text">Auto loan </span>
-                        </div>
+                    <div class="card m-auto" style="width: 15rem;">
+                      <i class="c-icons fa fa-home" style="font-size: 8em;"></i>
+                      <div class="card-body text-center">
+                        <span class="card-text">Mortgage Loan</span><br>
+                        <button class="btn btn-primary" (click)="addApp('mortgage')">Start New</button>
                       </div>
-                  
+                    </div>         
                 </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 15rem;">
-                        <i class="c-icons fa fa-home" style="font-size: 8em;"></i>
-                        <div class="card-body">
-                          <span class="card-text">Mortgage Loan</span>
-                        </div>
-                      </div>
-                  
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 15rem;">
-                        <i class="c-icons fa fa-credit-card-alt" style="font-size: 8em;"></i>
-                        <div class="card-body">
-                          <span class="card-text">Loanstars Credit Card</span>
-                        </div>
-                      </div>
-                  
-                </div>
+              <div class="col-sm">
+                  <div class="card m-auto" style="width: 15rem;">
+                    <i class="c-icons fa fa-car" style="font-size: 8em;"></i>
+                    <div class="card-body text-center">
+                      <span class="card-text">Auto loan </span><br>
+                      <button class="btn btn-primary" (click)="addApp('auto')">Start New</button>
+                    </div>
+                  </div>   
+              </div>
+              <div class="col-sm">
+                  <div class="card m-auto" style="width: 15rem;">
+                    <i class="c-icons fa fa-credit-card-alt" style="font-size: 8em;"></i>
+                    <div class="card-body text-center">
+                      <span class="card-text">Loanstars Credit Card</span><br>
+                      <button class="btn btn-primary" (click)="addApp('credit')">Start New</button>
+                    </div>
+                  </div>
               </div>
             </div>
+          </div>
 
 
         <table class="table table-bordered table-striped">
@@ -100,7 +100,6 @@
             </tr>
           </tbody>
         </table>
-        <button class="btn btn-primary" (click)="addApp('mortgage')">New Mortgage</button>
       </div>
     </div>  
 </ng-container>
