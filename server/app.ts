@@ -75,12 +75,14 @@ io.sockets.on('connection', (socket) => {
     }
     else if(data.operationType == "insert") {
       console.log("IN INSERT");
-      //console.log(data.fullDocument);
+      console.log(data);
       
       let app = data.fullDocument.app ? data.fullDocument.app : "";
+      let dataSent = data.fullDocument.data ? data.fullDocument.data : "";
       let result = {
         location: data.fullDocument.location,
         app: app,
+        dataSent: dataSent,
       }
       console.log(result); 
       socket.emit('update', result);

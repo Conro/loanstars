@@ -33,6 +33,12 @@ export class AppComponent implements OnInit {
       var data: any = result;
       //this.stateService.navigate(result);
       switch(data.location){
+        case 'downPayment': {
+          this.formDataService.updateDownPayment(data.dataSent);
+          this.router.navigate(['/new/step2']);
+        }
+        break;
+
         case 'home': {
           this.router.navigate(['/']);
         }

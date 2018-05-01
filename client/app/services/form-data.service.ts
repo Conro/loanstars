@@ -30,6 +30,11 @@ export class FormDataService {
         this.singleApp = new Observable<Application>();
     }
 
+    updateDownPayment(amount: string) {
+        this.appData.step2.downPayment = amount;
+        this.saveCurrent();
+    }
+
     loadApp(id: string, callback?): any {
         console.log("in loadApp: " + id)
         this.appService.loadAll(() => {
