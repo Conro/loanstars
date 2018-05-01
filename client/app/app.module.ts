@@ -31,6 +31,7 @@ import { FormFlowService } from './services/form-flow.service/form-flow.service'
 import { SuccessComponent } from './new-form/success/success.component';
 import { StateService } from './services/state.service';
 import { StatusComponent } from './shared/components/status/status.component';
+import { NotificationService } from './services/notification.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { StatusComponent } from './shared/components/status/status.component';
     UserService,
     FormDataService,
     FormFlowService,
-    StateService
+    StateService,
+    NotificationService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

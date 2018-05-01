@@ -1,4 +1,3 @@
-import { FormDataService } from './../services/form-data.service';
 import { Application } from './../shared/models/appplication-models/application.model';
 import { ApplicationService } from './../services/application.service';
 import { Component, OnInit } from '@angular/core';
@@ -32,7 +31,7 @@ export class MyAppsComponent implements OnInit {
               public toast: ToastComponent,
               private router: Router,
               private state: StateService,
-              private formDataService: FormDataService) { }
+              ) { }
 
   ngOnInit() {
     this.apps = this.appService.apps;
@@ -100,7 +99,7 @@ export class MyAppsComponent implements OnInit {
     //this.getApps();
   }
 
-  editApp(app: Application) {
+  quickEditApp(app: Application) {
     this.appService.update(app);
 
     /*

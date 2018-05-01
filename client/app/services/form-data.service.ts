@@ -29,22 +29,28 @@ export class FormDataService {
         this.singleApp = new Observable<Application>();
     }
 
-    loadApp(id: string): any {
+    loadApp(id: string, callback?): any {
         console.log("in loadApp: " + id)
-        this.singleApp = this.appService.apps.pipe(
-            map(apps => apps.find(item => item._id === id))
-            );
+        this.appService.loadAll(() => {
+            this.singleApp = this.appService.apps.pipe(
+                map(apps => apps.find(item => item._id === id))
+                );
+    
+            this.singleApp.subscribe(
+                data => {
+                    this.isEditing = true;
+                console.log("This is appData before assignment-----")
+                console.log(this.appData);
+                console.log(data)
+                this.appData = Object.assign(new Application, data);
+                
+                console.log("NOW AFTER assignment----------------------")
+                console.log(this.appData);
+            });
+            if(callback){
+                callback();
+            }
 
-        this.singleApp.subscribe(
-            data => {
-                this.isEditing = true;
-            console.log("This is appData before assignment-----")
-            console.log(this.appData);
-            console.log(data)
-            this.appData = Object.assign(new Application, data);
-            
-            console.log("NOW AFTER assignment----------------------")
-            console.log(this.appData);
         });
     }
 

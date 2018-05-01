@@ -29,12 +29,16 @@ export class NewFormComponent implements OnInit {
     if(paramId){
       console.log("We got an ID passed to the edit form page: " + paramId)   
       //this.formDataService.loadApp(paramId) 
-      this.stateService.editApp(paramId);
+      /*this.stateService.editApp(paramId, ()=> {
+        this.appData = this.formDataService.getFormData();
+      });*/
       //this.appData = this.formDataService.getFormData();
     }
     else if(queryId){
       console.log("We got an ID QUERY passed to the edit form page: " + paramId) 
-      this.stateService.editApp(queryId);
+      /*this.stateService.editApp(queryId, () => {
+        this.appData = this.formDataService.getFormData();
+      });*/
     }
     else{
       console.log("No id passed")
