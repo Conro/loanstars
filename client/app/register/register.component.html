@@ -162,7 +162,8 @@
         </div>
         <div class="form-row">
           <div class="col-md-3">
-              <button class="btn btn-primary btn-block" type="submit" [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Register</button>                
+              <button class="btn btn-primary" type="button" (click)="autofill()"><i class="fa fa-user-plus"></i> AutoFill</button>
+              <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Register</button>                
           </div>
         </div>
       </form>
