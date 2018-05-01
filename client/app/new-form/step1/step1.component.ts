@@ -33,7 +33,7 @@ export class Step1Component implements OnInit {
       });
   }
 
-  autofill(form: any) {
+  autofill() {
     this.formDataService.autofillSetStep1(this.step1);
     this.step1 = this.formDataService.getStep1();
     this.formDataService.autofillSetStep2(this.step2)
