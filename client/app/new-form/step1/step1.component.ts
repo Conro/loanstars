@@ -23,7 +23,7 @@ export class Step1Component implements OnInit {
 
   ngOnInit() {
      this.step1 = this.formDataService.getStep1();
-     console.log(this.step1)
+     console.log(this.step1);
 
      
      this.activatedRoute.params.subscribe(params => {

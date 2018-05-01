@@ -2,7 +2,6 @@ import { FormDataService } from './../../services/form-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Step2 } from '../../shared/models/appplication-models/steps.model';
-// import { PatternValidator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-step2',
@@ -11,7 +10,7 @@ import { Step2 } from '../../shared/models/appplication-models/steps.model';
 })
 export class Step2Component implements OnInit {
 
-	title = 'Property & Loan Information'
+	title = 'Property & Loan Information';
 	step2: Step2;
 	form: any;
 
@@ -19,7 +18,7 @@ export class Step2Component implements OnInit {
 
   ngOnInit() {
   	 this.step2 = this.formDataService.getStep2();
-     console.log(this.step2)
+     console.log(this.step2);
   }
   
   save(form: any): boolean {
