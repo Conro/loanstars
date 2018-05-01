@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
 @Injectable()
 export class NotificationService implements OnInit {
 
-  private SERVER_URL = 'http://localhost:3000';
+  //private SERVER_URL = 'http://localhost:3000';
+  private SERVER_URL = 'https://loanstars.herokuapp.com:3000';
+
   private socket;
   public list: Observable<String[]>;
 
