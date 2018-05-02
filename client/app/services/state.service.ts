@@ -55,7 +55,8 @@ export class StateService implements OnInit {
   addApp(_id: string) {
     this.isEditing = false;
     //this._formDataService.createNewApp();
-    this._formDataService.loadApp(_id);
-    this._router.navigate(['./new/step1'])
+    this._formDataService.loadApp(_id, () => {
+      this._router.navigate(['./new/step1'])
+    });
   }
 }
