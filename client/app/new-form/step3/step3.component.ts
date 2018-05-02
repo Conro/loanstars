@@ -40,7 +40,7 @@ export class Step3Component implements OnInit {
     console.log(form);
     if (this.save(form)) {
         // Navigate to the work page
-        this.formDataService.setStatus("completed")
+        this.formDataService.setStatus("submitted")
         this.router.navigate(['./my-apps']);
         this.toast.setMessage('Applcation successfully submitted!', 'success');
     }  

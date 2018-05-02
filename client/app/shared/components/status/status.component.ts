@@ -37,6 +37,10 @@ export class StatusComponent implements OnInit {
       case 'pending':
         this.color = 'blue';
       break;
+
+      case 'complete':
+        this.color = 'blue';
+      break;
     }
   }
 

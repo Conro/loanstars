@@ -215,6 +215,8 @@ export class FormDataService {
         // Update the Personal data only when the Personal Form had been validated successfully
         this.isStep1FormValid = true;
         
+            this.appData.status.currentStatus = "completed";
+
             this.appData.step1.firstName = "Marcus";
             this.appData.step1.middleName = "Layton";
             this.appData.step1.lastName = "Cunico";
