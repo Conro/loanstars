@@ -105,14 +105,14 @@ export class RegisterComponent implements OnInit {
       this.middleName.setValue("Layton"),
       this.lastName.setValue("Cunico"),
       this.dob.setValue("12/25/1994"),
-      this. primaryPhone.setValue("480-347-6454"),
+      this. primaryPhone.setValue("4803476454"),
       this.primaryPhoneType.setValue("Cell"),
       this.city.setValue("Tempe")
       this.state.setValue("AZ"),
       this.zipcode.setValue("85000"),
       this.username.setValue("mcunico"),
       this.email.setValue("mcunico25@gmail.com"),
-      this.role.setValue("User")
+      this.role.setValue("admin")
     
   }
   register() {

@@ -1,3 +1,4 @@
+import { NotificationService } from './services/notification.service';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -68,7 +69,8 @@ import { PatternValidator } from '@angular/forms';
     UserService,
     FormDataService,
     FormFlowService,
-    StateService
+    StateService,
+    NotificationService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

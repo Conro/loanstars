@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Step3 } from '../../shared/models/appplication-models/steps.model';
 import { Status } from '../../shared/models/appplication-models/status.model';
+import { ToastComponent } from '../../shared/toast/toast.component';
 
 @Component({
   selector: 'app-step3',
@@ -11,7 +12,7 @@ import { Status } from '../../shared/models/appplication-models/status.model';
 })
 export class Step3Component implements OnInit {
 
-  constructor(private router: Router, private formDataService: FormDataService) { }
+  constructor(private router: Router, private formDataService: FormDataService, private toast: ToastComponent) { }
 
   title = 'Your Finances.';
   step3: Step3;
@@ -40,7 +41,8 @@ export class Step3Component implements OnInit {
     if (this.save(form)) {
         // Navigate to the work page
         this.formDataService.setStatus("completed")
-        this.router.navigate(['./new/success']);
+        this.router.navigate(['./my-apps']);
+        this.toast.setMessage('Applcation successfully submitted!', 'success');
     }  
   }
 }

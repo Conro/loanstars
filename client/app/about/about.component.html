@@ -1,5 +1,6 @@
-<div class="card">
-  <h4 class="card-header">About</h4>
+<div class="card text-center">
+  <h1 *ngIf="!authService.loggedIn" class="card-header">Home</h1>
+  <h1 *ngIf="authService.loggedIn" class="card-header">Welcome {{authService.currentUser.firstname}} {{authService.currentUser.lastname}}!</h1>
   <div class="card-body">
     <img style="width:50%" class="embed-responsive embed-responsive-16by9 mx-auto d-block" src="./assets/images/LoanStarLogo.jpg">
   </div>

@@ -3,7 +3,7 @@
 <div class="card">
   <h4 class="card-header">Register</h4>
   <div class="form-row">
-    <div class="col-md-5 card-body" style="float:left">
+    <div class="col-5 card-body" style="float:left">
       <div class="col-left">
         <img style="width:50%" class="embed-responsive embed-responsive-16by9 mx-auto d-block" src="../assets/images/NoTransparent.gif" alt="test">
         <h2>Please fill out the required fields to register an account with Loanstars.</h2>
@@ -12,7 +12,7 @@
     <div class="col-md-7 card-body" style="float:right">
       <form [formGroup]="registerForm" (ngSubmit)="register()">
         <div class="form-row">
-          <div class="form-group col-md-3">
+          <div class="form-group col-5">
             <label for="firstname">First Name</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -31,7 +31,7 @@
             </div>
           </div>
         -->
-          <div class="form-group col-md-4">
+          <div class="form-group col-5">
             <label for="lastname">Last Name</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-3">
+          <div class="form-group col-5">
             <label for="dob">Date of Birth</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -51,7 +51,7 @@
               <input type="text" class="form-control" id="dob" name="dob" placeholder="dd/mm/yyyy" formControlName="dob">
             </div>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-5">
             <label for="email">Email</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-5">
             <label for="primaryPhone">Primary Phone Number</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -71,7 +71,7 @@
               <input type="text" class="form-control" name="primaryPhone" id="inputPrimaryPhone" placeholder="(000)-000-0000" formControlName="primaryPhone">
             </div>
           </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-5">
               <label for="PrimaryPhoneType">Primary Phone Type</label>
               <div class="input-group">
                 <select name="primaryPhoneType" id="inputPrimaryPhoneType" class="form-control" formControlName="primaryPhoneType">
@@ -87,7 +87,7 @@
 
 
         <div class="form-row">
-          <div class="form-group col-md-3">
+          <div class="form-group col-5">
             <label for="inputCity">City</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -96,7 +96,7 @@
               <input type="text" placeholder="" class="form-control" name="city" id="inputCity" formControlName="city">
             </div>
           </div>
-          <div class="form-group col-md-2">
+          <div class="form-group col-2">
             <label for="inputState">State</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -112,7 +112,7 @@
               </select>
             </div>
           </div>
-          <div class="form-group col-md-2">
+          <div class="form-group col-3">
             <label for="inputZip">Zip</label>
             <div class="input-group">
               <div class="input-group-prepend">
@@ -123,7 +123,7 @@
           </div>
         </div>
         <div class="form-row">
-            <div class="col-md-4">
+            <div class="col-5">
               <div class="form-group">
                 <label for="username">Username</label>
                 <div class="input-group">
@@ -134,7 +134,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-5">
               <div class="form-group">
                 <label for="password">Password</label>
                 <div class="input-group">
@@ -147,7 +147,7 @@
             </div>
           </div>
         <div class="form-row">
-          <div class="col-md-2">
+          <div class="col-5">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fa fa-black-tie"></i></span>
@@ -161,7 +161,7 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="col-md-3">
+          <div class="col-5">
               <button class="btn btn-primary" type="button" (click)="autofill()"><i class="fa fa-user-plus"></i> AutoFill</button>
               <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Register</button>                
           </div>
